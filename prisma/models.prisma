@@ -1,0 +1,168 @@
+model Admin {
+  id String @id @default(cuid())
+  email String @unique
+  passwordHash String
+  sessions Session[]
+  imports ImportBatch[]
+  uploads Upload[]
+  createdAt DateTime @default(now())
+}
+model Session {
+  tokenHash String @id
+  adminId String
+  admin Admin @relation(fields: [adminId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  @@index([expiresAt])
+}
+model LoginAttempt {
+  key String @id
+  failures Int @default(0)
+  windowStart DateTime @default(now())
+  blockedUntil DateTime?
+}
+model LandingSection {
+  key String @id
+  position Int @default(0)
+  visible Boolean @default(true)
+  texts ContentText[]
+  items ContentItem[]
+}
+model ContentText {
+  key String @id
+  sectionKey String
+  section LandingSection @relation(fields: [sectionKey], references: [key], onDelete: Restrict)
+  en String
+  ar String
+}
+model ContentItem {
+  key String @id
+  kind String
+  sectionKey String
+  section LandingSection @relation(fields: [sectionKey], references: [key], onDelete: Restrict)
+  payload String
+  position Int @default(0)
+  visible Boolean @default(true)
+  @@index([kind, position])
+}
+model Supplier {
+  key String @id
+  nameEn String
+  nameAr String @default("")
+  descriptionEn String
+  descriptionAr String
+  specialtyEn String
+  specialtyAr String
+  email String @default("")
+  phone String @default("")
+  whatsapp String @default("")
+  crNumber String @default("")
+  cityKey String?
+  city City? @relation(fields: [cityKey], references: [key], onDelete: Restrict)
+  coverageEn String
+  coverageAr String
+  rating String @default("")
+  turnaroundEn String @default("")
+  turnaroundAr String @default("")
+  projectsEn String @default("")
+  projectsAr String @default("")
+  verified Boolean @default(false)
+  featured Boolean @default(false)
+  visible Boolean @default(true)
+  position Int @default(0)
+  catalog CatalogItem[]
+  uploads Upload[]
+}
+model Client {
+  key String @id
+  nameEn String
+  nameAr String @default("")
+  descriptionEn String
+  descriptionAr String
+  specialtyEn String
+  specialtyAr String
+  coverageEn String
+  coverageAr String
+  crNumber String @default("")
+  rating String @default("")
+  turnaroundEn String @default("")
+  turnaroundAr String @default("")
+  projectsEn String @default("")
+  projectsAr String @default("")
+  verified Boolean @default(false)
+  featured Boolean @default(false)
+  visible Boolean @default(true)
+  position Int @default(0)
+}
+model Category {
+  key String @id
+  nameEn String
+  nameAr String @default("")
+  icon String @default("◇")
+  visible Boolean @default(true)
+  position Int @default(0)
+  catalog CatalogItem[]
+}
+model City {
+  key String @id
+  nameEn String
+  nameAr String @default("")
+  visible Boolean @default(true)
+  position Int @default(0)
+  suppliers Supplier[]
+}
+model CatalogItem {
+  key String @id
+  supplierKey String
+  supplier Supplier @relation(fields: [supplierKey], references: [key], onDelete: Restrict)
+  categoryKey String
+  category Category @relation(fields: [categoryKey], references: [key], onDelete: Restrict)
+  nameEn String
+  nameAr String @default("")
+  unitEn String
+  unitAr String @default("")
+  priceHalalas Int
+  visible Boolean @default(true)
+  position Int @default(0)
+}
+model FeeTier {
+  key String @id
+  nameEn String
+  nameAr String @default("")
+  descriptionEn String
+  descriptionAr String
+  minimumHalalas Int @unique
+  feeHalalas Int
+  color String @default("gold")
+}
+model SiteSetting {
+  key String @id
+  value String
+}
+model Upload {
+  id String @id @default(cuid())
+  adminId String
+  admin Admin @relation(fields: [adminId], references: [id], onDelete: Restrict)
+  supplierKey String?
+  supplier Supplier? @relation(fields: [supplierKey], references: [key], onDelete: Restrict)
+  filename String
+  contentType String
+  size Int
+  locator String
+  driver String
+  status String @default("pending")
+  createdAt DateTime @default(now())
+}
+model ImportBatch {
+  id String @id @default(cuid())
+  adminId String
+  admin Admin @relation(fields: [adminId], references: [id], onDelete: Restrict)
+  kind String
+  filename String
+  rows String
+  errors String
+  status String @default("preview")
+  createdCount Int @default(0)
+  updatedCount Int @default(0)
+  createdAt DateTime @default(now())
+  committedAt DateTime?
+}

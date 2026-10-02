@@ -1,153 +1,141 @@
-import React, { useState, useId } from 'react';
+"use client";
 
+import { useLanding } from "./landing-context";
+import { totals, feeFor } from "../lib/pricing";
+import React, { useState, useEffect, useRef } from "react";
 export default function Demo() {
-  const [selectedCategory, setSelectedCategory] = useState('General Contracting');
-  const [selectedCity, setSelectedCity] = useState('Riyadh');
+  const {
+    t,
+    locale,
+    settings,
+    categories,
+    cities,
+    catalogData,
+    supplierOptions,
+    clientName,
+    tiers,
+    money,
+  } = useLanding();
+  const [supplierKey, setSupplierKey] = useState(supplierOptions[0]?.key || "");
+  const supplier =
+    supplierOptions.find((s) => s.key === supplierKey)?.name ||
+    t("demo.noSupplier");
+  const [selectedCategory, setSelectedCategory] = useState(
+    categories[0]?.id || "",
+  );
+  const [selectedCity, setSelectedCity] = useState(cities[0]?.name || "");
   const [selectedItems, setSelectedItems] = useState({});
-  const [isSimulating, setIsSimulating] = useState(false);
+  const timers = useRef([]);
+  useEffect(() => () => timers.current.forEach(clearTimeout), []);
   const [simStep, setSimStep] = useState(0); // 0: Idle, 1: Sent, 2: Matched, 3: Quote Ready, 4: Unlocked
   const [contactUnlocked, setContactUnlocked] = useState(false);
-  const [errorMsg, setErrorMsg] = useState('');
-
-  const supplier = 'Smartinbox Establishment';
-  const clientName = 'Karam Al-Watan Co.';
+  const [errorMsg, setErrorMsg] = useState("");
 
   // Categories and their supplier catalogs
-  const categories = [
-    { id: 'General Contracting', label: 'General Contracting', icon: '🏗️', arabic: 'مقاولات عامة' },
-    { id: 'Plumbing & Electrical', label: 'Plumbing & Electrical', icon: '⚡', arabic: 'كهرباء وسباكة' },
-    { id: 'HVAC & Cooling', label: 'HVAC & Cooling', icon: '❄️', arabic: 'تكييف وتبريد' },
-    { id: 'Interior & Decor', label: 'Interior & Decor', icon: '🎨', arabic: 'ديكور وتشطيبات' },
-    { id: 'Waterproofing', label: 'Waterproofing & Insulation', icon: '🛡️', arabic: 'عزل مائي وحراري' },
-  ];
 
-  const cities = [
-    { name: 'Riyadh', arabic: 'الرياض' },
-    { name: 'Jeddah', arabic: 'جدة' },
-    { name: 'Dammam', arabic: 'الدمام' },
-    { name: 'Khobar', arabic: 'الخبر' },
-  ];
-
-  const catalogData = {
-    'General Contracting': [
-      { id: 'gc-1', name: 'Concrete Pouring & Casting (per m²)', price: 45, unit: 'm²' },
-      { id: 'gc-2', name: 'Brickwork & Structural Masonry (per m²)', price: 60, unit: 'm²' },
-      { id: 'gc-3', name: 'Skilled Construction Labor Crew (daily rate)', price: 180, unit: 'day' },
-      { id: 'gc-4', name: 'Site Foundation Leveling & Compaction', price: 95, unit: 'm²' },
-    ],
-    'Plumbing & Electrical': [
-      { id: 'pe-1', name: 'Electrical Outlet Point Layout & Wiring', price: 35, unit: 'point' },
-      { id: 'pe-2', name: 'Piping & Master Water Lines (per meter)', price: 25, unit: 'meter' },
-      { id: 'pe-3', name: 'Main Circuit Breaker Panel Installation', price: 120, unit: 'panel' },
-      { id: 'pe-4', name: 'Bathroom Drainage & Trap Rough-in', price: 85, unit: 'set' },
-    ],
-    'HVAC & Cooling': [
-      { id: 'hvac-1', name: 'Split Unit Routine Service & Cleaning', price: 120, unit: 'unit' },
-      { id: 'hvac-2', name: 'High-Purity Freon Refrigerant Recharge', price: 150, unit: 'fill' },
-      { id: 'hvac-3', name: 'Brand-New Split AC Unit Installation', price: 300, unit: 'unit' },
-      { id: 'hvac-4', name: 'Centralized Duct Airflow Balancing', price: 250, unit: 'zone' },
-    ],
-    'Interior & Decor': [
-      { id: 'id-1', name: 'Interior Wall Painting & Smoothing (per m²)', price: 15, unit: 'm²' },
-      { id: 'id-2', name: 'Gypsum Board Suspended Ceiling (per m²)', price: 55, unit: 'm²' },
-      { id: 'id-3', name: 'Architectural LED Concealed Spotlight Point', price: 90, unit: 'point' },
-      { id: 'id-4', name: 'High-Traffic Epoxy Floor Coating (per m²)', price: 45, unit: 'm²' },
-    ],
-    'Waterproofing': [
-      { id: 'wp-1', name: 'Bituminous Rooftop Waterproofing (per m²)', price: 35, unit: 'm²' },
-      { id: 'wp-2', name: 'Rigid Thermal Polyurethane Insulation (per m²)', price: 40, unit: 'm²' },
-      { id: 'wp-3', name: 'Acrylic Final Protective Topcoat (per m²)', price: 20, unit: 'm²' },
-      { id: 'wp-4', name: 'Basement Underground Tanking Membrane', price: 65, unit: 'm²' },
-    ],
-  };
-
-  const currentItems = catalogData[selectedCategory] || [];
+  const currentItems = (catalogData[selectedCategory] || []).filter(
+    (item) => item.supplierKey === supplierKey,
+  );
 
   // Toggle item selection
   const handleItemToggle = (item) => {
     setSelectedItems((prev) => {
-      const copy = { ...prev };
+      const copy = {
+        ...prev,
+      };
       if (copy[item.id]) {
         delete copy[item.id];
       } else {
-        copy[item.id] = { ...item, qty: 1 };
+        copy[item.id] = {
+          ...item,
+          qty: 1,
+        };
       }
       return copy;
     });
-    setErrorMsg('');
+    setErrorMsg("");
   };
 
   // Change quantity
   const handleQtyChange = (itemId, delta) => {
     setSelectedItems((prev) => {
       if (!prev[itemId]) return prev;
-      const newQty = Math.max(1, prev[itemId].qty + delta);
+      const newQty = Math.min(100000, Math.max(1, prev[itemId].qty + delta));
       return {
         ...prev,
-        [itemId]: { ...prev[itemId], qty: newQty },
+        [itemId]: {
+          ...prev[itemId],
+          qty: newQty,
+        },
       };
     });
   };
 
   // Calculate Subtotal, VAT, and Total
   const selectedList = Object.values(selectedItems);
-  const subtotal = selectedList.reduce((acc, curr) => acc + curr.price * curr.qty, 0);
-  const vat = Math.round(subtotal * 0.15 * 100) / 100;
-  const grandTotal = Math.round((subtotal + vat) * 100) / 100;
+  const amounts = totals(selectedList, settings.vatBasisPoints);
+  const subtotal = amounts.subtotal / 100;
+  const vat = amounts.vat / 100;
+  const grandTotal = amounts.total / 100;
 
   // Run the Simulation
   const handleRunSimulation = () => {
     if (selectedList.length === 0) {
-      setErrorMsg('Please select at least one item from the catalog below.');
+      setErrorMsg(
+        locale === "ar"
+          ? "اختر عنصراً واحداً على الأقل."
+          : "Please select at least one item.",
+      );
       return;
     }
-    setErrorMsg('');
-    setIsSimulating(true);
+    setErrorMsg("");
+
     setSimStep(1);
 
     // Sequence timing for realistic cinematic feel
-    setTimeout(() => {
-      setSimStep(2); // Matching
-    }, 700);
-
-    setTimeout(() => {
-      setSimStep(3); // Quote ready
-      setIsSimulating(false);
-    }, 1800);
+    timers.current.push(
+      setTimeout(() => {
+        setSimStep(2); // Matching
+      }, 700),
+    );
+    timers.current.push(
+      setTimeout(() => {
+        setSimStep(3); // Quote ready
+      }, 1800),
+    );
   };
 
   // Reset simulation
   const handleReset = () => {
+    timers.current.forEach(clearTimeout);
+    timers.current = [];
     setSimStep(0);
-    setIsSimulating(false);
+
     setSelectedItems({});
     setContactUnlocked(false);
-    setErrorMsg('');
+    setErrorMsg("");
   };
 
   // Unique quote number based on date
-  const quoteNumber = `Q-2026-${Math.floor(1000 + (subtotal % 8999))}`;
-
+  const quoteNumber = `DEMO-${Math.floor(1000 + (subtotal % 8999))}`;
   return (
     <section id="demo" className="py-24 px-6 bg-[#0b0c0a] relative">
       <div className="max-w-7xl mx-auto">
-        
         {/* SECTION HEADER */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-block text-xs font-bold text-[#d9a441] tracking-widest uppercase mb-3 px-3 py-1 bg-[#131410] border border-[#d9a441]/30 rounded-sm">
-            Act IV · Live Interactive Demo
+            {t("demo.text.001")}
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-[#f4efe3] tracking-tight">
-            Configure Your Scope & Generate an Instant Quote
+            {t("demo.text.002")}
           </h2>
           <p className="mt-4 text-[#9a9285] text-base sm:text-lg leading-relaxed">
-            Prices are pulled live from certified supplier books. Select your parameters, inspect real-time unit rates, and experience the zero-wait quotation engine.
+            {t("demo.text.003")}
           </p>
         </div>
 
         {/* ================= SPACIOUS TWO-COLUMN WORKBENCH ================= */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          
           {/* LEFT COLUMN: SCOPE CONFIGURATOR (Spacious & Clean) */}
           <div className="lg:col-span-6 bg-[#131410] border border-[#f4efe3]/10 p-8 sm:p-10 rounded-xs relative">
             {/* Corner Bracket */}
@@ -156,18 +144,41 @@ export default function Demo() {
 
             <div className="flex items-center justify-between pb-4 mb-6 border-b border-[#f4efe3]/10">
               <div>
-                <h3 className="text-xl font-bold text-[#f4efe3]">1. Request Builder</h3>
-                <p className="text-xs text-[#9a9285] mt-0.5">Customize your specifications</p>
+                <h3 className="text-xl font-bold text-[#f4efe3]">
+                  {t("demo.text.004")}
+                </h3>
+                <p className="text-xs text-[#9a9285] mt-0.5">
+                  {t("demo.text.005")}
+                </p>
               </div>
               <span className="text-xs text-[#2f8464] bg-[#10241c] px-3 py-1 border border-[#2f8464]/30 font-semibold">
-                Live Pricing Active
+                {t("demo.text.006")}
               </span>
             </div>
 
+            <label className="block text-xs text-[#d9a441] mb-6">
+              {t("demo.supplierLabel")}
+              <select
+                aria-label={t("demo.supplierLabel")}
+                disabled={simStep > 0}
+                className="block w-full mt-2 p-3 border border-[#f4efe3]/20 bg-[#0b0c0a] text-[#f4efe3]"
+                value={supplierKey}
+                onChange={(event) => {
+                  setSupplierKey(event.target.value);
+                  setSelectedItems({});
+                }}
+              >
+                {supplierOptions.map((s) => (
+                  <option key={s.key} value={s.key}>
+                    {s.name}
+                  </option>
+                ))}
+              </select>
+            </label>
             {/* STEP A: CATEGORY SELECTOR */}
             <div className="mb-8">
               <label className="block text-xs font-bold text-[#d9a441] tracking-wider uppercase mb-3">
-                Step 1: Select Contracting Division
+                {t("demo.text.007")}
               </label>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {categories.map((cat) => {
@@ -181,16 +192,14 @@ export default function Demo() {
                         setSelectedCategory(cat.id);
                         setSelectedItems({});
                       }}
-                      className={`p-3.5 text-left rounded-xs border transition-all flex items-center gap-3 cursor-pointer ${
-                        isSelected
-                          ? 'bg-[#1a1d17] border-[#d9a441] text-[#f4efe3] shadow-[0_0_15px_rgba(217,164,65,0.15)]'
-                          : 'bg-[#0e0f0c] border-[#f4efe3]/10 text-[#9a9285] hover:border-[#f4efe3]/30 hover:text-[#f4efe3]'
-                      } ${simStep > 0 ? 'opacity-60 cursor-not-allowed' : ''}`}
+                      className={`p-3.5 text-left rounded-xs border transition-all flex items-center gap-3 cursor-pointer ${isSelected ? "bg-[#1a1d17] border-[#d9a441] text-[#f4efe3] shadow-[0_0_15px_rgba(217,164,65,0.15)]" : "bg-[#0e0f0c] border-[#f4efe3]/10 text-[#9a9285] hover:border-[#f4efe3]/30 hover:text-[#f4efe3]"} ${simStep > 0 ? "opacity-60 cursor-not-allowed" : ""}`}
                     >
                       <span className="text-2xl">{cat.icon}</span>
                       <div>
                         <div className="text-xs font-bold">{cat.label}</div>
-                        <div className="text-[0.65rem] text-[#9a9285]">{cat.arabic}</div>
+                        <div className="text-[0.65rem] text-[#9a9285]">
+                          {cat.arabic}
+                        </div>
                       </div>
                     </button>
                   );
@@ -201,7 +210,7 @@ export default function Demo() {
             {/* STEP B: CITY SELECTOR */}
             <div className="mb-8">
               <label className="block text-xs font-bold text-[#d9a441] tracking-wider uppercase mb-3">
-                Step 2: Project Location
+                {t("demo.text.008")}
               </label>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
                 {cities.map((city) => {
@@ -212,14 +221,12 @@ export default function Demo() {
                       type="button"
                       disabled={simStep > 0}
                       onClick={() => setSelectedCity(city.name)}
-                      className={`py-2.5 px-3 text-center rounded-xs border transition-all text-xs font-bold cursor-pointer ${
-                        isSelected
-                          ? 'bg-[#d9a441] text-[#0b0c0a] border-[#d9a441]'
-                          : 'bg-[#0e0f0c] border-[#f4efe3]/10 text-[#9a9285] hover:border-[#f4efe3]/30 hover:text-[#f4efe3]'
-                      } ${simStep > 0 ? 'opacity-60 cursor-not-allowed' : ''}`}
+                      className={`py-2.5 px-3 text-center rounded-xs border transition-all text-xs font-bold cursor-pointer ${isSelected ? "bg-[#d9a441] text-[#0b0c0a] border-[#d9a441]" : "bg-[#0e0f0c] border-[#f4efe3]/10 text-[#9a9285] hover:border-[#f4efe3]/30 hover:text-[#f4efe3]"} ${simStep > 0 ? "opacity-60 cursor-not-allowed" : ""}`}
                     >
                       {city.name}
-                      <span className="block text-[0.65rem] opacity-75 font-normal">{city.arabic}</span>
+                      <span className="block text-[0.65rem] opacity-75 font-normal">
+                        {city.arabic}
+                      </span>
                     </button>
                   );
                 })}
@@ -230,9 +237,12 @@ export default function Demo() {
             <div className="mb-8">
               <div className="flex items-center justify-between mb-3">
                 <label className="text-xs font-bold text-[#d9a441] tracking-wider uppercase">
-                  Step 3: Choose Items from {supplier}
+                  {t("demo.text.009")}
+                  {supplier}
                 </label>
-                <span className="text-[0.7rem] text-[#9a9285]">Select and adjust quantity</span>
+                <span className="text-[0.7rem] text-[#9a9285]">
+                  {t("demo.text.010")}
+                </span>
               </div>
 
               <div className="space-y-3 max-h-90 overflow-y-auto pr-1">
@@ -242,11 +252,7 @@ export default function Demo() {
                   return (
                     <div
                       key={item.id}
-                      className={`p-4 rounded-xs border transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 ${
-                        isChecked
-                          ? 'bg-[#181a14] border-[#d9a441]/70'
-                          : 'bg-[#0e0f0c] border-[#f4efe3]/10 hover:border-[#f4efe3]/20'
-                      }`}
+                      className={`p-4 rounded-xs border transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 ${isChecked ? "bg-[#181a14] border-[#d9a441]/70" : "bg-[#0e0f0c] border-[#f4efe3]/10 hover:border-[#f4efe3]/20"}`}
                     >
                       <label className="flex items-center gap-3 cursor-pointer flex-1">
                         <input
@@ -259,9 +265,16 @@ export default function Demo() {
                         <div>
                           <div className="text-xs sm:text-sm font-semibold text-[#f4efe3]">
                             {item.name}
+                            <span className="block text-xs text-[#9a9285]">
+                              {item.supplierName}
+                            </span>
                           </div>
                           <div className="text-xs text-[#d9a441] font-mono mt-0.5">
-                            {item.price} SAR <span className="text-[#9a9285] font-sans text-[0.7rem]">/ {item.unit}</span>
+                            {money(item.priceHalalas)}
+                            <span className="text-[#9a9285] font-sans text-[0.7rem]">
+                              {t("demo.text.012")}
+                              {item.unit}
+                            </span>
                           </div>
                         </div>
                       </label>
@@ -275,7 +288,7 @@ export default function Demo() {
                             onClick={() => handleQtyChange(item.id, -1)}
                             className="w-6 h-6 flex items-center justify-center text-xs font-bold text-[#f4efe3] hover:text-[#d9a441] disabled:opacity-30 cursor-pointer"
                           >
-                            -
+                            {t("demo.text.013")}
                           </button>
                           <span className="w-8 text-center text-xs font-mono font-bold text-[#f4efe3]">
                             {qty}
@@ -286,7 +299,7 @@ export default function Demo() {
                             onClick={() => handleQtyChange(item.id, 1)}
                             className="w-6 h-6 flex items-center justify-center text-xs font-bold text-[#f4efe3] hover:text-[#d9a441] cursor-pointer"
                           >
-                            +
+                            {t("demo.text.014")}
                           </button>
                         </div>
                       )}
@@ -306,12 +319,23 @@ export default function Demo() {
             {/* LIVE TOTAL BAR */}
             <div className="p-4 bg-[#0b0c0a] border border-[#d9a441]/30 flex items-center justify-between mb-6">
               <div>
-                <span className="text-xs text-[#9a9285] block">Estimated Subtotal</span>
-                <span className="text-xs text-[#2f8464]">{selectedList.length} items configured</span>
+                <span className="text-xs text-[#9a9285] block">
+                  {t("demo.text.015")}
+                </span>
+                <span className="text-xs text-[#2f8464]">
+                  {selectedList.length}
+                  {t("demo.text.016")}
+                </span>
               </div>
               <div className="text-right">
                 <span className="text-2xl font-bold font-mono text-[#d9a441]">
-                  {subtotal.toLocaleString()} <span className="text-xs font-sans">SAR</span>
+                  {subtotal.toLocaleString(
+                    locale === "ar" ? "ar-SA" : "en-SA",
+                    { minimumFractionDigits: 2, maximumFractionDigits: 2 },
+                  )}{" "}
+                  <span className="text-xs font-sans">
+                    {t("demo.text.017")}
+                  </span>
                 </span>
               </div>
             </div>
@@ -320,10 +344,11 @@ export default function Demo() {
             {simStep === 0 ? (
               <button
                 type="button"
+                disabled={!supplierKey || !cities.length || !categories.length}
                 onClick={handleRunSimulation}
                 className="w-full py-4 text-sm font-bold text-[#0b0c0a] bg-[#d9a441] hover:bg-[#e8b559] transition-all transform hover:-translate-y-0.5 rounded-xs shadow-[0_4px_20px_rgba(217,164,65,0.25)] cursor-pointer"
               >
-                Generate Instant Official Quote →
+                {t("demo.text.018")}
               </button>
             ) : (
               <button
@@ -331,29 +356,51 @@ export default function Demo() {
                 onClick={handleReset}
                 className="w-full py-3 text-xs font-bold text-[#9a9285] hover:text-[#f4efe3] border border-[#f4efe3]/20 hover:border-[#f4efe3]/40 rounded-xs cursor-pointer transition-all"
               >
-                ↻ Reset and Build Another Request
+                {t("demo.text.019")}
               </button>
             )}
           </div>
 
           {/* RIGHT COLUMN: SIMULATION THREAD & OFFICIAL QUOTE SHEET */}
           <div className="lg:col-span-6 flex flex-col gap-6">
-            
             {/* SIMULATION THREAD BUBBLES */}
             {simStep >= 1 && (
               <div className="bg-[#131410] border border-[#f4efe3]/10 p-6 rounded-xs space-y-4">
-                
                 {/* 1. Client Bubble */}
                 <div className="p-4 bg-[#1a1d17] border border-[#d9a441]/30 rounded-xs">
                   <div className="text-[0.7rem] text-[#d9a441] font-semibold mb-1 flex items-center justify-between">
-                    <span>{clientName} · {selectedCategory}</span>
-                    <span>📍 {selectedCity}</span>
+                    <span>
+                      {clientName}
+                      {t("demo.text.020")}
+                      {selectedCategory}
+                    </span>
+                    <span>
+                      {t("demo.text.021")}
+                      {selectedCity}
+                    </span>
                   </div>
                   <div className="text-xs text-[#f4efe3]/90 space-y-1 mt-2">
                     {selectedList.map((it) => (
-                      <div key={it.id} className="flex justify-between font-mono">
-                        <span>• {it.name} × {it.qty}</span>
-                        <span>{(it.price * it.qty).toLocaleString()} SAR</span>
+                      <div
+                        key={it.id}
+                        className="flex justify-between font-mono"
+                      >
+                        <span>
+                          {t("demo.text.022")}
+                          {it.name}
+                          {t("demo.text.023")}
+                          {it.qty}
+                        </span>
+                        <span>
+                          {(it.price * it.qty).toLocaleString(
+                            locale === "ar" ? "ar-SA" : "en-SA",
+                            {
+                              minimumFractionDigits: 2,
+                              maximumFractionDigits: 2,
+                            },
+                          )}
+                          {t("demo.text.024")}
+                        </span>
                       </div>
                     ))}
                   </div>
@@ -363,7 +410,11 @@ export default function Demo() {
                 {simStep >= 2 && (
                   <div className="text-center py-2 text-xs text-[#9a9285] flex items-center justify-center gap-2 font-mono">
                     <span className="w-2 h-2 rounded-full bg-[#2f8464] animate-ping" />
-                    <span>Cross-matching specification with catalog of {supplier}...</span>
+                    <span>
+                      {t("demo.text.025")}
+                      {supplier}
+                      {t("demo.text.026")}
+                    </span>
                   </div>
                 )}
 
@@ -371,11 +422,15 @@ export default function Demo() {
                 {simStep >= 3 && (
                   <div className="p-4 bg-[#10241c] border border-[#2f8464]/40 rounded-xs">
                     <div className="text-[0.7rem] text-[#2f8464] font-bold flex items-center justify-between">
-                      <span>✓ {supplier} (Verified)</span>
-                      <span>Response SLA: 1.4s</span>
+                      <span>
+                        {t("demo.text.027")}
+                        {supplier}
+                        {t("demo.text.028")}
+                      </span>
+                      <span>{t("demo.text.029")}</span>
                     </div>
                     <p className="text-xs text-[#f4efe3] mt-1.5 leading-relaxed">
-                      Official price book match confirmed. Quotation document generated with verified unit costs and 15% VAT breakdown below.
+                      {t("demo.text.030")}
                     </p>
                   </div>
                 )}
@@ -384,38 +439,59 @@ export default function Demo() {
 
             {/* THE LUXURY OFFICIAL QUOTE DOCUMENT (Appears on Step 3) */}
             {simStep >= 3 ? (
-              <div className="bg-[#f4efe3] text-[#131410] p-8 rounded-xs shadow-2xl relative border-t-4 border-[#d9a441]">
-                
+              <div
+                data-quote-sheet
+                className="bg-[#f4efe3] text-[#131410] p-8 rounded-xs shadow-2xl relative border-t-4 border-[#d9a441]"
+              >
                 {/* Header */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b-2 border-[#131410] pb-4 mb-6 gap-3">
                   <div>
-                    <h4 className="text-xl font-black tracking-tight">{supplier}</h4>
+                    <h4 className="text-xl font-black tracking-tight">
+                      {supplier}
+                    </h4>
                     <p className="text-xs text-[#6b6255] font-medium mt-0.5">
-                      {selectedCategory} · Verified Supplier ({selectedCity})
+                      {selectedCategory}
+                      {t("demo.text.031")}
+                      {selectedCity}
+                      {t("demo.text.032")}
                     </p>
                   </div>
                   <div className="self-start sm:self-auto px-3 py-1 bg-[#131410] text-[#f4efe3] text-xs font-bold uppercase tracking-wider">
-                    Official Quotation
+                    {t("demo.text.033")}
                   </div>
                 </div>
 
                 {/* Metadata Row */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs border-b border-[#d8d0bd] pb-4 mb-4 text-[#4a4436]">
                   <div>
-                    <span className="block text-[0.65rem] text-[#8c8273] uppercase">Submitted To</span>
+                    <span className="block text-[0.65rem] text-[#8c8273] uppercase">
+                      {t("demo.text.034")}
+                    </span>
                     <span className="font-bold">{clientName}</span>
                   </div>
                   <div>
-                    <span className="block text-[0.65rem] text-[#8c8273] uppercase">Quote Ref</span>
+                    <span className="block text-[0.65rem] text-[#8c8273] uppercase">
+                      {t("demo.text.035")}
+                    </span>
                     <span className="font-mono font-bold">{quoteNumber}</span>
                   </div>
                   <div>
-                    <span className="block text-[0.65rem] text-[#8c8273] uppercase">Date Issued</span>
-                    <span className="font-medium">March 19, 2026</span>
+                    <span className="block text-[0.65rem] text-[#8c8273] uppercase">
+                      {t("demo.text.036")}
+                    </span>
+                    <span className="font-medium">
+                      {new Intl.DateTimeFormat(
+                        locale === "ar" ? "ar-SA" : "en-SA",
+                      ).format(new Date())}
+                    </span>
                   </div>
                   <div>
-                    <span className="block text-[0.65rem] text-[#8c8273] uppercase">Validity</span>
-                    <span className="text-[#7a4526] font-bold">7 Days</span>
+                    <span className="block text-[0.65rem] text-[#8c8273] uppercase">
+                      {t("demo.text.038")}
+                    </span>
+                    <span className="text-[#7a4526] font-bold">
+                      {t("demo.text.039")}
+                    </span>
                   </div>
                 </div>
 
@@ -424,20 +500,39 @@ export default function Demo() {
                   <table className="w-full text-xs text-left">
                     <thead>
                       <tr className="border-b border-[#d8d0bd] text-[#6b6255]">
-                        <th className="py-2 pr-2">Description</th>
-                        <th className="py-2 text-center">Qty</th>
-                        <th className="py-2 text-right">Unit Price</th>
-                        <th className="py-2 text-right pl-2">Total</th>
+                        <th className="py-2 pr-2">{t("demo.text.040")}</th>
+                        <th className="py-2 text-center">
+                          {t("demo.text.041")}
+                        </th>
+                        <th className="py-2 text-right">
+                          {t("demo.text.042")}
+                        </th>
+                        <th className="py-2 text-right pl-2">
+                          {t("demo.text.043")}
+                        </th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-[#e6e0d1]">
                       {selectedList.map((item) => (
                         <tr key={item.id}>
-                          <td className="py-2.5 pr-2 font-medium">{item.name}</td>
-                          <td className="py-2.5 text-center font-mono">{item.qty}</td>
-                          <td className="py-2.5 text-right font-mono">{item.price} SAR</td>
+                          <td className="py-2.5 pr-2 font-medium">
+                            {item.name}
+                          </td>
+                          <td className="py-2.5 text-center font-mono">
+                            {item.qty}
+                          </td>
+                          <td className="py-2.5 text-right font-mono">
+                            {money(item.priceHalalas)}
+                          </td>
                           <td className="py-2.5 text-right pl-2 font-mono font-bold">
-                            {(item.price * item.qty).toLocaleString()} SAR
+                            {(item.price * item.qty).toLocaleString(
+                              locale === "ar" ? "ar-SA" : "en-SA",
+                              {
+                                minimumFractionDigits: 2,
+                                maximumFractionDigits: 2,
+                              },
+                            )}
+                            {t("demo.text.045")}
                           </td>
                         </tr>
                       ))}
@@ -448,30 +543,48 @@ export default function Demo() {
                 {/* Financial Totals */}
                 <div className="border-t border-[#d8d0bd] pt-3 flex flex-col items-end text-xs space-y-1.5">
                   <div className="flex justify-between w-64 text-[#6b6255]">
-                    <span>Subtotal:</span>
-                    <span className="font-mono font-bold">{subtotal.toLocaleString()} SAR</span>
+                    <span>{t("demo.text.046")}</span>
+                    <span className="font-mono font-bold">
+                      {subtotal.toLocaleString(
+                        locale === "ar" ? "ar-SA" : "en-SA",
+                        { minimumFractionDigits: 2, maximumFractionDigits: 2 },
+                      )}
+                      {t("demo.text.047")}
+                    </span>
                   </div>
                   <div className="flex justify-between w-64 text-[#6b6255]">
-                    <span>VAT (15%):</span>
-                    <span className="font-mono font-bold">{vat.toLocaleString()} SAR</span>
+                    <span>
+                      {t("demo.text.048")} ({settings.vatBasisPoints / 100}%)
+                    </span>
+                    <span className="font-mono font-bold">
+                      {vat.toLocaleString(locale === "ar" ? "ar-SA" : "en-SA", {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2,
+                      })}
+                      {t("demo.text.049")}
+                    </span>
                   </div>
                   <div className="flex justify-between w-64 text-sm font-black text-[#131410] border-t-2 border-[#131410] pt-2">
-                    <span>Grand Total:</span>
-                    <span className="font-mono text-base">{grandTotal.toLocaleString()} SAR</span>
+                    <span>{t("demo.text.050")}</span>
+                    <span className="font-mono text-base">
+                      {grandTotal.toLocaleString(
+                        locale === "ar" ? "ar-SA" : "en-SA",
+                        { minimumFractionDigits: 2, maximumFractionDigits: 2 },
+                      )}
+                      {t("demo.text.051")}
+                    </span>
                   </div>
                 </div>
 
                 {/* Disclaimer & Print Action */}
                 <div className="mt-6 pt-4 border-t border-dashed border-[#c9c0aa] text-[0.7rem] text-[#6b6255] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-                  <p className="max-w-md">
-                    This is an automated binding quote issued via Tawreed Platform. Final prices subject to site survey.
-                  </p>
+                  <p className="max-w-md">{t("demo.text.052")}</p>
                   <button
                     type="button"
                     onClick={() => window.print()}
                     className="px-4 py-2 bg-[#131410] hover:bg-[#252820] text-[#f4efe3] font-bold text-xs rounded-xs transition-colors cursor-pointer shrink-0"
                   >
-                    🖨️ Print / Save PDF
+                    {t("demo.text.053")}
                   </button>
                 </div>
 
@@ -480,63 +593,70 @@ export default function Demo() {
                   <div className="flex items-center justify-between">
                     <div>
                       <span className="text-[0.7rem] text-[#d9a441] uppercase tracking-wider font-bold block">
-                        Platform Monetization Mechanism
+                        {t("demo.text.054")}
                       </span>
                       <h5 className="text-sm font-bold mt-0.5">
                         {contactUnlocked
-                          ? 'Direct Connection Established'
-                          : 'Lock In Schedule & Execution'}
+                          ? "Direct Connection Established"
+                          : "Lock In Schedule & Execution"}
                       </h5>
                     </div>
-                    <span className="text-xs text-[#2f8464] font-mono">Lead Fee: 50 SAR</span>
+                    <span className="text-xs text-[#2f8464] font-mono">
+                      {t("demo.text.055")}:{" "}
+                      {money(feeFor(amounts.subtotal, tiers))}
+                    </span>
                   </div>
 
                   {!contactUnlocked ? (
                     <div className="mt-3">
                       <p className="text-xs text-[#9a9285] mb-3">
-                        Supplier pays a flat opportunity micro-fee to unlock client WhatsApp & site address for site inspection.
+                        {t("demo.text.056")}
                       </p>
                       <button
                         type="button"
                         onClick={() => setContactUnlocked(true)}
                         className="w-full py-2.5 text-xs font-bold text-[#0b0c0a] bg-[#d9a441] hover:bg-[#e8b559] rounded-xs transition-colors cursor-pointer"
                       >
-                        🔓 Unlock Direct Phone & WhatsApp Access
+                        {t("demo.text.057")}
                       </button>
                     </div>
                   ) : (
                     <div className="mt-3 p-3 bg-[#10241c] border border-[#2f8464]/50 rounded-xs text-xs space-y-1">
                       <div className="text-[#2f8464] font-bold">
-                        ✓ Contact Info Unlocked (Opportunity Fee Settled)
+                        {t("demo.text.058")}
                       </div>
                       <div className="text-[#f4efe3]">
-                        📞 Direct Line: <span className="font-mono text-[#d9a441]">+966 50 123 4567</span>
+                        {t("demo.text.059")}
+                        <span className="font-mono text-[#d9a441]">
+                          {t("demo.text.060")}
+                        </span>
                       </div>
                       <div className="text-[#f4efe3]">
-                        💬 WhatsApp: <span className="font-mono text-[#d9a441]">+966 50 123 4567</span> (Instant Chat Ready)
+                        {t("demo.text.061")}
+                        <span className="font-mono text-[#d9a441]">
+                          {t("demo.text.062")}
+                        </span>
+                        {t("demo.text.063")}
                       </div>
                     </div>
                   )}
                 </div>
-
-              </div>
+              </div> /* Placeholder state when not yet submitted */
             ) : (
-              /* Placeholder state when not yet submitted */
               <div className="h-full min-h-120 bg-[#131410] border border-dashed border-[#f4efe3]/15 rounded-xs flex flex-col items-center justify-center p-8 text-center">
                 <div className="w-16 h-16 rounded-full bg-[#1a1d17] border border-[#d9a441]/30 flex items-center justify-center text-2xl mb-4 text-[#d9a441]">
-                  📄
+                  {t("demo.text.064")}
                 </div>
-                <h4 className="text-lg font-bold text-[#f4efe3]">Official Quotation Sheet</h4>
+                <h4 className="text-lg font-bold text-[#f4efe3]">
+                  {t("demo.text.065")}
+                </h4>
                 <p className="text-xs text-[#9a9285] max-w-sm mt-2 leading-relaxed">
-                  Select your items on the left workbench and click "Generate Instant Official Quote" to simulate live cost breakdown and ZATCA compliance.
+                  {t("demo.text.066")}
                 </p>
               </div>
             )}
-
           </div>
-
         </div>
-
       </div>
     </section>
   );

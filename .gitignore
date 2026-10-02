@@ -22,3 +22,14 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Next.js, secrets, generated clients, private databases/uploads
+.next/
+.env
+.env.*
+!.env.example
+data/
+src/generated/
+*.tsbuildinfo
+playwright-report/
+test-results/

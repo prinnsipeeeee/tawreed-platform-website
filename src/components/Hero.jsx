@@ -1,6 +1,9 @@
-import React, { useState, useEffect } from 'react';
+"use client";
 
+import { useLanding } from "./landing-context";
+import React, { useState, useEffect } from "react";
 export default function Hero() {
+  const { t, records, links, sectionVisible } = useLanding();
   const [isOpened, setIsOpened] = useState(false);
 
   // Theatrical curtain / letterbox open animation on mount
@@ -10,7 +13,6 @@ export default function Hero() {
     }, 150);
     return () => clearTimeout(timer);
   }, []);
-
   return (
     <section
       id="hero"
@@ -25,15 +27,11 @@ export default function Hero() {
       {/* ================= CINEMATIC LETTERBOX BARS ================= */}
       {/* Top Curtain Bar */}
       <div
-        className={`absolute top-0 left-0 right-0 h-[10vh] min-h-12 bg-[#000000] z-20 transition-transform duration-1000 ease-[cubic-bezier(0.65,0,0.35,1)] ${
-          isOpened ? '-translate-y-full' : 'translate-y-0'
-        }`}
+        className={`absolute top-0 left-0 right-0 h-[10vh] min-h-12 bg-[#000000] z-20 transition-transform duration-1000 ease-[cubic-bezier(0.65,0,0.35,1)] ${isOpened ? "-translate-y-full" : "translate-y-0"}`}
       />
       {/* Bottom Curtain Bar */}
       <div
-        className={`absolute bottom-0 left-0 right-0 h-[10vh] min-h-12 bg-[#000000] z-20 transition-transform duration-1000 ease-[cubic-bezier(0.65,0,0.35,1)] ${
-          isOpened ? 'translate-y-full' : 'translate-y-0'
-        }`}
+        className={`absolute bottom-0 left-0 right-0 h-[10vh] min-h-12 bg-[#000000] z-20 transition-transform duration-1000 ease-[cubic-bezier(0.65,0,0.35,1)] ${isOpened ? "translate-y-full" : "translate-y-0"}`}
       />
 
       {/* ================= CORNER BRACKET DECORATIVE BORDER ================= */}
@@ -46,62 +44,63 @@ export default function Hero() {
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#d9a441]/30 bg-[#131410]/80 backdrop-blur-sm mb-6">
           <span className="w-1.5 h-1.5 rounded-full bg-[#d9a441] animate-pulse" />
           <span className="text-xs font-semibold tracking-widest text-[#d9a441] uppercase">
-            Saudi Procurement Platform · Chapter One
+            {t("hero.text.001")}
           </span>
         </div>
 
         {/* HERO MAIN HEADLINE */}
         <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-[#f4efe3] tracking-tight leading-[1.1] drop-shadow-[0_0_50px_rgba(217,164,65,0.3)]">
-          The Story Begins <br />
+          {t("hero.text.002")}
+          <br />
           <span className="text-transparent bg-clip-text bg-linear-to-r from-[#f4efe3] via-[#d9a441] to-[#e8b559]">
-            With A Single Request
+            {t("hero.text.003")}
           </span>
         </h1>
 
         {/* SUBTITLE */}
         <p className="max-w-2xl mt-6 text-base sm:text-lg md:text-xl text-[#9a9285] leading-relaxed">
-          A specialized platform uniting Saudi contracting suppliers in one ecosystem. 
-          Send your specifications and instantly convert them into standardized, comparable official quotations.
+          {t("hero.text.004")}
         </p>
 
-        {/* TRUST PILLS / KEY HIGHLIGHTS */}
-        <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
-          <div className="flex items-center gap-2 px-3.5 py-1.5 bg-[#131410] border border-[#f4efe3]/10 text-xs text-[#f4efe3]/80">
-            <span className="text-[#2f8464] font-bold">✓</span> Verified Contracting Suppliers
-          </div>
-          <div className="flex items-center gap-2 px-3.5 py-1.5 bg-[#131410] border border-[#f4efe3]/10 text-xs text-[#f4efe3]/80">
-            <span className="text-[#d9a441] font-bold">⚡</span> Instant Quotation Engine
-          </div>
-          <div className="flex items-center gap-2 px-3.5 py-1.5 bg-[#131410] border border-[#f4efe3]/10 text-xs text-[#f4efe3]/80">
-            <span className="text-[#b56a3b] font-bold">★</span> Zero Commission Hassle
-          </div>
+        <div className="flex flex-wrap justify-center gap-4 mt-8">
+          {records("heroBadge").map((badge) => (
+            <div
+              key={badge.key}
+              className="px-4 py-2 bg-[#131410] border border-[#f4efe3]/10 text-xs"
+            >
+              <span className="text-[#d9a441]">{badge.icon}</span> {badge.label}
+            </div>
+          ))}
         </div>
-
-        {/* CALL TO ACTION BUTTONS */}
-        <div className="flex flex-wrap items-center justify-center gap-4 mt-10">
-          <a
-            href="#demo"
-            className="px-8 py-3.5 text-sm sm:text-base font-bold text-[#0b0c0a] bg-[#d9a441] hover:bg-[#e8b559] transition-all duration-300 transform hover:-translate-y-1 rounded-xs shadow-[0_4px_25px_rgba(217,164,65,0.35)]"
-          >
-            Experience Live Quote
-          </a>
-          <a
-            href="#scenes"
-            className="px-8 py-3.5 text-sm sm:text-base font-semibold text-[#f4efe3] bg-transparent border border-[#f4efe3]/20 hover:border-[#d9a441] hover:text-[#d9a441] transition-all duration-300 rounded-xs"
-          >
-            How The Story Unfolds
-          </a>
+        <div className="flex flex-wrap justify-center gap-4 mt-10">
+          {links("heroButton").map((button, index) => (
+            <a
+              key={button.key}
+              href={button.href}
+              className={
+                index === 0
+                  ? "button-primary px-8 py-3.5"
+                  : "button-secondary px-8 py-3.5"
+              }
+            >
+              {button.label}
+            </a>
+          ))}
         </div>
       </div>
 
       {/* ================= SCROLL DOWN CUE ================= */}
-      <a
-        href="#acts"
-        className="mt-14 mb-4 flex flex-col items-center gap-2 text-xs text-[#9a9285] hover:text-[#d9a441] transition-colors z-10 group"
-      >
-        <div className="w-px h-10 bg-linear-to-b from-transparent via-[#d9a441] to-transparent group-hover:h-12 transition-all duration-300" />
-        <span className="tracking-widest uppercase text-[0.7rem]">Scroll Down</span>
-      </a>
+      {sectionVisible("acts") && (
+        <a
+          href="#acts"
+          className="mt-14 mb-4 flex flex-col items-center gap-2 text-xs text-[#9a9285] hover:text-[#d9a441] transition-colors z-10 group"
+        >
+          <div className="w-px h-10 bg-linear-to-b from-transparent via-[#d9a441] to-transparent group-hover:h-12 transition-all duration-300" />
+          <span className="tracking-widest uppercase text-[0.7rem]">
+            {t("hero.text.013")}
+          </span>
+        </a>
+      )}
     </section>
   );
 }

@@ -1,0 +1,1852 @@
+{
+  "texts": [
+    {
+      "key": "acts.text.001",
+      "sectionKey": "acts",
+      "en": "Act I · Specialized Divisions",
+      "ar": "الفصل الأول · التخصصات"
+    },
+    {
+      "key": "acts.text.002",
+      "sectionKey": "acts",
+      "en": "Everything Your Contracting Project Needs",
+      "ar": "كل ما يحتاجه مشروع المقاولات"
+    },
+    {
+      "key": "acts.text.003",
+      "sectionKey": "acts",
+      "en": "Built from the ground up for the Saudi contracting ecosystem. A single structured request routes automatically to the exact vetted specialists.",
+      "ar": "نظام مصمم لقطاع المقاولات السعودي. يوجّه طلبك إلى المتخصصين المناسبين."
+    },
+    {
+      "key": "acts.text.004",
+      "sectionKey": "acts",
+      "en": "All Divisions (",
+      "ar": "جميع التخصصات ("
+    },
+    {
+      "key": "acts.text.005",
+      "sectionKey": "acts",
+      "en": ")",
+      "ar": ")"
+    },
+    {
+      "key": "acts.text.006",
+      "sectionKey": "acts",
+      "en": "Structural & Civil",
+      "ar": "الأعمال الإنشائية والمدنية"
+    },
+    {
+      "key": "acts.text.007",
+      "sectionKey": "acts",
+      "en": "MEP & Utilities",
+      "ar": "الكهرباء والسباكة والمرافق"
+    },
+    {
+      "key": "acts.text.008",
+      "sectionKey": "acts",
+      "en": "Finishing & Fitout",
+      "ar": "التشطيبات والتجهيز"
+    },
+    {
+      "key": "acts.text.009",
+      "sectionKey": "acts",
+      "en": "Scope of Supply:",
+      "ar": "نطاق الخدمات:"
+    },
+    {
+      "key": "acts.text.010",
+      "sectionKey": "acts",
+      "en": "Request Quote in this Division",
+      "ar": "اطلب عرض سعر لهذا التخصص"
+    },
+    {
+      "key": "acts.text.011",
+      "sectionKey": "acts",
+      "en": "→",
+      "ar": "→"
+    },
+    {
+      "key": "acts.text.012",
+      "sectionKey": "acts",
+      "en": "Upcoming Roadmap · Platform Expansion",
+      "ar": "خارطة الطريق · توسع المنصة"
+    },
+    {
+      "key": "acts.text.013",
+      "sectionKey": "acts",
+      "en": "More Contracting Ecosystems Coming in Chapter Two & Three",
+      "ar": "تخصصات جديدة في الفصلين الثاني والثالث"
+    },
+    {
+      "key": "acts.text.014",
+      "sectionKey": "acts",
+      "en": "We are actively integrating verified suppliers for heavy machinery leasing (Chapter II) and bulk building material logistics (Chapter III).",
+      "ar": "نعمل على إضافة موردي تأجير المعدات الثقيلة والخدمات اللوجستية لمواد البناء."
+    },
+    {
+      "key": "acts.text.015",
+      "sectionKey": "acts",
+      "en": "🚜 Heavy Equipment ",
+      "ar": "🚜 المعدات الثقيلة "
+    },
+    {
+      "key": "acts.text.016",
+      "sectionKey": "acts",
+      "en": "(Q3)",
+      "ar": "(الربع الثالث)"
+    },
+    {
+      "key": "acts.text.017",
+      "sectionKey": "acts",
+      "en": "🧱 Bulk Cement & Rebar ",
+      "ar": "🧱 الإسمنت وحديد التسليح "
+    },
+    {
+      "key": "acts.text.018",
+      "sectionKey": "acts",
+      "en": "(Q4)",
+      "ar": "(الربع الرابع)"
+    },
+    {
+      "key": "closing.text.001",
+      "sectionKey": "closing",
+      "en": "The Next Chapter",
+      "ar": "الفصل التالي"
+    },
+    {
+      "key": "closing.text.002",
+      "sectionKey": "closing",
+      "en": "The Real Transformation Begins With Your First Request",
+      "ar": "يبدأ التحول بطلبك الأول"
+    },
+    {
+      "key": "closing.text.003",
+      "sectionKey": "closing",
+      "en": "Whether you are a developer seeking guaranteed transparent prices, or a certified contractor looking for high-intent Saudi construction projects.",
+      "ar": "للمطور الباحث عن أسعار شفافة وللمقاول الباحث عن فرص مشاريع مناسبة في السعودية."
+    },
+    {
+      "key": "crew.text.001",
+      "sectionKey": "crew",
+      "en": "Act II · Key Characters",
+      "ar": "الفصل الثاني · المشاركون"
+    },
+    {
+      "key": "crew.text.002",
+      "sectionKey": "crew",
+      "en": "The Client & Supplier in this Live Experience",
+      "ar": "العملاء والموردون في هذا النموذج"
+    },
+    {
+      "key": "crew.text.003",
+      "sectionKey": "crew",
+      "en": "Real enterprise case study model. How verified suppliers and professional construction clients transact without endless negotiations or middleman frictions.",
+      "ar": "نموذج تعريفي يوضح التواصل بين الموردين والعملاء في قطاع المقاولات دون تعقيدات الوسطاء."
+    },
+    {
+      "key": "crew.text.004",
+      "sectionKey": "crew",
+      "en": "All Entities (",
+      "ar": "جميع الجهات ("
+    },
+    {
+      "key": "crew.text.005",
+      "sectionKey": "crew",
+      "en": ")",
+      "ar": ")"
+    },
+    {
+      "key": "crew.text.006",
+      "sectionKey": "crew",
+      "en": "Verified Suppliers",
+      "ar": "موردون موثّقون"
+    },
+    {
+      "key": "crew.text.007",
+      "sectionKey": "crew",
+      "en": "Contractor Clients",
+      "ar": "عملاء المقاولات"
+    },
+    {
+      "key": "crew.text.008",
+      "sectionKey": "crew",
+      "en": "📍",
+      "ar": "📍"
+    },
+    {
+      "key": "crew.text.009",
+      "sectionKey": "crew",
+      "en": "Track Record",
+      "ar": "سجل المشاريع"
+    },
+    {
+      "key": "crew.text.010",
+      "sectionKey": "crew",
+      "en": "Response SLA",
+      "ar": "زمن الاستجابة"
+    },
+    {
+      "key": "crew.text.011",
+      "sectionKey": "crew",
+      "en": "Domain: ",
+      "ar": "التخصص: "
+    },
+    {
+      "key": "crew.text.012",
+      "sectionKey": "crew",
+      "en": "✓",
+      "ar": "✓"
+    },
+    {
+      "key": "crew.text.013",
+      "sectionKey": "crew",
+      "en": " MoCI & Balady Verified",
+      "ar": " موثّق لدى التجارة وبلدي"
+    },
+    {
+      "key": "crew.text.014",
+      "sectionKey": "crew",
+      "en": "★ ",
+      "ar": "★ "
+    },
+    {
+      "key": "crew.text.015",
+      "sectionKey": "crew",
+      "en": "Rigorous Quality Assurance",
+      "ar": "ضمان الجودة"
+    },
+    {
+      "key": "crew.text.016",
+      "sectionKey": "crew",
+      "en": "How We Verify Every Participating Supplier",
+      "ar": "كيف نتحقق من الموردين المشاركين"
+    },
+    {
+      "key": "crew.text.017",
+      "sectionKey": "crew",
+      "en": "1",
+      "ar": "1"
+    },
+    {
+      "key": "crew.text.018",
+      "sectionKey": "crew",
+      "en": "Commercial Registration",
+      "ar": "السجل التجاري"
+    },
+    {
+      "key": "crew.text.019",
+      "sectionKey": "crew",
+      "en": "Verified via Saudi Ministry of Commerce API with active contracting license.",
+      "ar": "التحقق من السجل التجاري ورخصة المقاولات السارية."
+    },
+    {
+      "key": "crew.text.020",
+      "sectionKey": "crew",
+      "en": "2",
+      "ar": "2"
+    },
+    {
+      "key": "crew.text.021",
+      "sectionKey": "crew",
+      "en": "Chamber of Commerce",
+      "ar": "الغرفة التجارية"
+    },
+    {
+      "key": "crew.text.022",
+      "sectionKey": "crew",
+      "en": "Active membership in the Riyadh, Jeddah, or Eastern Chamber.",
+      "ar": "عضوية سارية في غرفة الرياض أو جدة أو الشرقية."
+    },
+    {
+      "key": "crew.text.023",
+      "sectionKey": "crew",
+      "en": "3",
+      "ar": "3"
+    },
+    {
+      "key": "crew.text.024",
+      "sectionKey": "crew",
+      "en": "Tax & Zakat Compliance",
+      "ar": "الامتثال للزكاة والضريبة"
+    },
+    {
+      "key": "crew.text.025",
+      "sectionKey": "crew",
+      "en": "Certified ZATCA 15% VAT invoice compatibility and clear audit history.",
+      "ar": "توافق الفواتير مع متطلبات هيئة الزكاة والضريبة والجمارك."
+    },
+    {
+      "key": "crew.text.026",
+      "sectionKey": "crew",
+      "en": "4",
+      "ar": "4"
+    },
+    {
+      "key": "crew.text.027",
+      "sectionKey": "crew",
+      "en": "Site & Warehouse Audits",
+      "ar": "تدقيق المواقع والمستودعات"
+    },
+    {
+      "key": "crew.text.028",
+      "sectionKey": "crew",
+      "en": "Physical spot inspections on machinery and inventory availability.",
+      "ar": "فحص المعدات وتوفر المخزون ميدانياً."
+    },
+    {
+      "key": "demo.text.001",
+      "sectionKey": "demo",
+      "en": "Act IV · Live Interactive Demo",
+      "ar": "الفصل الرابع · عرض تفاعلي تجريبي"
+    },
+    {
+      "key": "demo.text.002",
+      "sectionKey": "demo",
+      "en": "Configure Your Scope & Generate an Instant Quote",
+      "ar": "حدد نطاق العمل وأنشئ عرض سعر تجريبياً"
+    },
+    {
+      "key": "demo.text.003",
+      "sectionKey": "demo",
+      "en": "Demo prices from the managed catalog. Select services and quantities to explore quotation calculations.",
+      "ar": "أسعار تجريبية من الكتالوج المُدار. حدد الخدمات والكميات لاستكشاف حساب عرض السعر."
+    },
+    {
+      "key": "demo.text.004",
+      "sectionKey": "demo",
+      "en": "1. Request Builder",
+      "ar": "١. إعداد الطلب"
+    },
+    {
+      "key": "demo.text.005",
+      "sectionKey": "demo",
+      "en": "Customize your specifications",
+      "ar": "حدد مواصفاتك"
+    },
+    {
+      "key": "demo.text.006",
+      "sectionKey": "demo",
+      "en": "Demo Pricing",
+      "ar": "أسعار تجريبية"
+    },
+    {
+      "key": "demo.text.007",
+      "sectionKey": "demo",
+      "en": "Step 1: Select Contracting Division",
+      "ar": "الخطوة الأولى: اختر التخصص"
+    },
+    {
+      "key": "demo.text.008",
+      "sectionKey": "demo",
+      "en": "Step 2: Project Location",
+      "ar": "الخطوة الثانية: موقع المشروع"
+    },
+    {
+      "key": "demo.text.009",
+      "sectionKey": "demo",
+      "en": "Step 3: Choose Items from ",
+      "ar": "الخطوة الثالثة: اختر الخدمات من "
+    },
+    {
+      "key": "demo.text.010",
+      "sectionKey": "demo",
+      "en": "Select and adjust quantity",
+      "ar": "اختر الخدمات وعدّل الكمية"
+    },
+    {
+      "key": "demo.text.012",
+      "sectionKey": "demo",
+      "en": "/ ",
+      "ar": "/ "
+    },
+    {
+      "key": "demo.text.013",
+      "sectionKey": "demo",
+      "en": "-",
+      "ar": "-"
+    },
+    {
+      "key": "demo.text.014",
+      "sectionKey": "demo",
+      "en": "+",
+      "ar": "+"
+    },
+    {
+      "key": "demo.text.015",
+      "sectionKey": "demo",
+      "en": "Estimated Subtotal",
+      "ar": "المجموع الفرعي التقديري"
+    },
+    {
+      "key": "demo.text.016",
+      "sectionKey": "demo",
+      "en": " items configured",
+      "ar": " خدمة محددة"
+    },
+    {
+      "key": "demo.text.017",
+      "sectionKey": "demo",
+      "en": "SAR",
+      "ar": "ر.س"
+    },
+    {
+      "key": "demo.text.018",
+      "sectionKey": "demo",
+      "en": "Generate Demo Quote →",
+      "ar": "إنشاء عرض سعر تجريبي"
+    },
+    {
+      "key": "demo.text.019",
+      "sectionKey": "demo",
+      "en": "↻ Reset and Build Another Request",
+      "ar": "إعادة البدء وإنشاء طلب جديد"
+    },
+    {
+      "key": "demo.text.020",
+      "sectionKey": "demo",
+      "en": " · ",
+      "ar": " · "
+    },
+    {
+      "key": "demo.text.021",
+      "sectionKey": "demo",
+      "en": "📍 ",
+      "ar": "📍 "
+    },
+    {
+      "key": "demo.text.022",
+      "sectionKey": "demo",
+      "en": "• ",
+      "ar": "• "
+    },
+    {
+      "key": "demo.text.023",
+      "sectionKey": "demo",
+      "en": " × ",
+      "ar": " × "
+    },
+    {
+      "key": "demo.text.024",
+      "sectionKey": "demo",
+      "en": " SAR",
+      "ar": " ريال"
+    },
+    {
+      "key": "demo.text.025",
+      "sectionKey": "demo",
+      "en": "Cross-matching specification with catalog of ",
+      "ar": "محاكاة مطابقة المواصفات مع كتالوج "
+    },
+    {
+      "key": "demo.text.026",
+      "sectionKey": "demo",
+      "en": "...",
+      "ar": "..."
+    },
+    {
+      "key": "demo.text.027",
+      "sectionKey": "demo",
+      "en": "✓ ",
+      "ar": "✓ "
+    },
+    {
+      "key": "demo.text.028",
+      "sectionKey": "demo",
+      "en": " (Verified)",
+      "ar": " (موثّق)"
+    },
+    {
+      "key": "demo.text.029",
+      "sectionKey": "demo",
+      "en": "Response SLA: 1.4s",
+      "ar": "زمن استجابة تجريبي: ١٫٤ ثانية"
+    },
+    {
+      "key": "demo.text.030",
+      "sectionKey": "demo",
+      "en": "Catalog matching simulation complete. Demo pricing and VAT calculations are shown below.",
+      "ar": "اكتملت محاكاة مطابقة الكتالوج. يظهر تفصيل الأسعار والضريبة أدناه."
+    },
+    {
+      "key": "demo.text.031",
+      "sectionKey": "demo",
+      "en": " · Verified Supplier (",
+      "ar": " · مورد موثّق ("
+    },
+    {
+      "key": "demo.text.032",
+      "sectionKey": "demo",
+      "en": ")",
+      "ar": ")"
+    },
+    {
+      "key": "demo.text.033",
+      "sectionKey": "demo",
+      "en": "Demo Quotation",
+      "ar": "عرض سعر تجريبي"
+    },
+    {
+      "key": "demo.text.034",
+      "sectionKey": "demo",
+      "en": "Submitted To",
+      "ar": "مقدم إلى"
+    },
+    {
+      "key": "demo.text.035",
+      "sectionKey": "demo",
+      "en": "Quote Ref",
+      "ar": "مرجع العرض"
+    },
+    {
+      "key": "demo.text.036",
+      "sectionKey": "demo",
+      "en": "Date Issued",
+      "ar": "تاريخ الإصدار"
+    },
+    {
+      "key": "demo.text.038",
+      "sectionKey": "demo",
+      "en": "Validity",
+      "ar": "الصلاحية"
+    },
+    {
+      "key": "demo.text.039",
+      "sectionKey": "demo",
+      "en": "7 Days",
+      "ar": "٧ أيام"
+    },
+    {
+      "key": "demo.text.040",
+      "sectionKey": "demo",
+      "en": "Description",
+      "ar": "الوصف"
+    },
+    {
+      "key": "demo.text.041",
+      "sectionKey": "demo",
+      "en": "Qty",
+      "ar": "الكمية"
+    },
+    {
+      "key": "demo.text.042",
+      "sectionKey": "demo",
+      "en": "Unit Price",
+      "ar": "سعر الوحدة"
+    },
+    {
+      "key": "demo.text.043",
+      "sectionKey": "demo",
+      "en": "Total",
+      "ar": "الإجمالي"
+    },
+    {
+      "key": "demo.text.045",
+      "sectionKey": "demo",
+      "en": " SAR",
+      "ar": " ريال"
+    },
+    {
+      "key": "demo.text.046",
+      "sectionKey": "demo",
+      "en": "Subtotal:",
+      "ar": "المجموع الفرعي:"
+    },
+    {
+      "key": "demo.text.047",
+      "sectionKey": "demo",
+      "en": " SAR",
+      "ar": " ريال"
+    },
+    {
+      "key": "demo.text.048",
+      "sectionKey": "demo",
+      "en": "VAT (15%):",
+      "ar": "ضريبة القيمة المضافة:"
+    },
+    {
+      "key": "demo.text.049",
+      "sectionKey": "demo",
+      "en": " SAR",
+      "ar": " ريال"
+    },
+    {
+      "key": "demo.text.050",
+      "sectionKey": "demo",
+      "en": "Grand Total:",
+      "ar": "الإجمالي النهائي:"
+    },
+    {
+      "key": "demo.text.051",
+      "sectionKey": "demo",
+      "en": " SAR",
+      "ar": " ريال"
+    },
+    {
+      "key": "demo.text.052",
+      "sectionKey": "demo",
+      "en": "This is a non-binding demonstration. No commercial agreement or payment is created.",
+      "ar": "هذا عرض تجريبي غير ملزم؛ لا يمثل اتفاقاً تجارياً أو دفعة مالية."
+    },
+    {
+      "key": "demo.text.053",
+      "sectionKey": "demo",
+      "en": "🖨️ Print / Save PDF",
+      "ar": "طباعة / حفظ PDF"
+    },
+    {
+      "key": "demo.text.054",
+      "sectionKey": "demo",
+      "en": "Platform Monetization Mechanism",
+      "ar": "محاكاة رسوم الفرص"
+    },
+    {
+      "key": "demo.text.055",
+      "sectionKey": "demo",
+      "en": "Demo lead fee",
+      "ar": "رسوم فرصة تجريبية"
+    },
+    {
+      "key": "demo.text.056",
+      "sectionKey": "demo",
+      "en": "Simulate opening contact details. No payment is collected.",
+      "ar": "هذا نموذج توضيحي لفتح بيانات التواصل؛ لا يتم تحصيل أي مبلغ."
+    },
+    {
+      "key": "demo.text.057",
+      "sectionKey": "demo",
+      "en": "Simulate Contact Unlock",
+      "ar": "محاكاة فتح بيانات الاتصال"
+    },
+    {
+      "key": "demo.text.058",
+      "sectionKey": "demo",
+      "en": "Demo Contact Details Unlocked (No Payment)",
+      "ar": "تم فتح بيانات تجريبية (بدون دفع)"
+    },
+    {
+      "key": "demo.text.059",
+      "sectionKey": "demo",
+      "en": "Demo telephone: ",
+      "ar": "الهاتف التجريبي: "
+    },
+    {
+      "key": "demo.text.060",
+      "sectionKey": "demo",
+      "en": "+966 50 123 4567",
+      "ar": "+966 50 123 4567"
+    },
+    {
+      "key": "demo.text.061",
+      "sectionKey": "demo",
+      "en": "Demo WhatsApp: ",
+      "ar": "واتساب التجريبي: "
+    },
+    {
+      "key": "demo.text.062",
+      "sectionKey": "demo",
+      "en": "+966 50 123 4567",
+      "ar": "+966 50 123 4567"
+    },
+    {
+      "key": "demo.text.063",
+      "sectionKey": "demo",
+      "en": " (Example data)",
+      "ar": " (بيانات تجريبية)"
+    },
+    {
+      "key": "demo.text.064",
+      "sectionKey": "demo",
+      "en": "📄",
+      "ar": "📄"
+    },
+    {
+      "key": "demo.text.065",
+      "sectionKey": "demo",
+      "en": "Official Quotation Sheet",
+      "ar": "ورقة عرض السعر التجريبي"
+    },
+    {
+      "key": "demo.text.066",
+      "sectionKey": "demo",
+      "en": "Select your items on the left workbench and click \"Generate Instant Official Quote\" to simulate live cost breakdown and ZATCA compliance.",
+      "ar": "اختر الخدمات ثم أنشئ عرض سعر لاستكشاف حساب الأسعار والضريبة."
+    },
+    {
+      "key": "footer.text.001",
+      "sectionKey": "footer",
+      "en": "T",
+      "ar": "ت"
+    },
+    {
+      "key": "footer.text.002",
+      "sectionKey": "footer",
+      "en": "Tawreed Platform",
+      "ar": "منصّة توريد"
+    },
+    {
+      "key": "footer.text.003",
+      "sectionKey": "footer",
+      "en": "منصّة توريد · Chapter One: Contracting",
+      "ar": "منصّة توريد · الفصل الأول: المقاولات"
+    },
+    {
+      "key": "footer.text.004",
+      "sectionKey": "footer",
+      "en": "Saudi Arabia’s unified procurement ecosystem connecting general contractors, MEP specialists, and developers with zero-friction, instant official quotations.",
+      "ar": "منصة مشتريات سعودية تجمع المقاولين والمتخصصين والمطورين لتقديم عروض أسعار موحدة."
+    },
+    {
+      "key": "footer.text.005",
+      "sectionKey": "footer",
+      "en": "🇸🇦 Saudi Arabia",
+      "ar": "🇸🇦 المملكة العربية السعودية"
+    },
+    {
+      "key": "footer.text.006",
+      "sectionKey": "footer",
+      "en": "ZATCA 15% VAT Compliant",
+      "ar": "ضريبة القيمة المضافة ١٥٪"
+    },
+    {
+      "key": "footer.text.007",
+      "sectionKey": "footer",
+      "en": "Navigation",
+      "ar": "روابط التنقل"
+    },
+    {
+      "key": "footer.text.014",
+      "sectionKey": "footer",
+      "en": "Core Divisions",
+      "ar": "التخصصات الرئيسية"
+    },
+    {
+      "key": "footer.text.020",
+      "sectionKey": "footer",
+      "en": "Operating Coverage",
+      "ar": "مناطق التغطية"
+    },
+    {
+      "key": "footer.text.027",
+      "sectionKey": "footer",
+      "en": "Full Kingdom rollout active",
+      "ar": "توسع مستهدف في جميع مناطق المملكة"
+    },
+    {
+      "key": "footer.text.029",
+      "sectionKey": "footer",
+      "en": " Tawreed Platform (منصّة توريد). Prototype & Architectural Blueprint · KSA.",
+      "ar": " منصّة توريد. نموذج تجريبي · المملكة العربية السعودية."
+    },
+    {
+      "key": "footer.text.030",
+      "sectionKey": "footer",
+      "en": "Back to Top",
+      "ar": "العودة للأعلى"
+    },
+    {
+      "key": "hero.text.001",
+      "sectionKey": "hero",
+      "en": "Saudi Procurement Platform · Chapter One",
+      "ar": "منصة المشتريات السعودية · الفصل الأول"
+    },
+    {
+      "key": "hero.text.002",
+      "sectionKey": "hero",
+      "en": "The Story Begins ",
+      "ar": "تبدأ القصة "
+    },
+    {
+      "key": "hero.text.003",
+      "sectionKey": "hero",
+      "en": "With A Single Request",
+      "ar": "بطلب واحد"
+    },
+    {
+      "key": "hero.text.004",
+      "sectionKey": "hero",
+      "en": "A specialized platform uniting Saudi contracting suppliers in one ecosystem. Send your specifications and instantly convert them into standardized, comparable official quotations.",
+      "ar": "منصة متخصصة تجمع موردي المقاولات في السعودية. أرسل مواصفاتك وحوّلها إلى عروض أسعار موحدة قابلة للمقارنة."
+    },
+    {
+      "key": "hero.text.013",
+      "sectionKey": "hero",
+      "en": "Scroll Down",
+      "ar": "انتقل للأسفل"
+    },
+    {
+      "key": "model.text.001",
+      "sectionKey": "model",
+      "en": "Act V · Sustainable Monetization",
+      "ar": "الفصل الخامس · نموذج الإيرادات"
+    },
+    {
+      "key": "model.text.002",
+      "sectionKey": "model",
+      "en": "The Revenue Model: Pure Pay-Per-Lead",
+      "ar": "نموذج الإيرادات: رسوم لكل فرصة"
+    },
+    {
+      "key": "model.text.003",
+      "sectionKey": "model",
+      "en": "Zero subscription traps. Zero post-deal disputes. Suppliers only pay a micro-fee when they choose to unlock verified client contact details.",
+      "ar": "رسوم ثابتة للفرص بدلاً من الاشتراكات أو العمولات على العقود."
+    },
+    {
+      "key": "model.text.004",
+      "sectionKey": "model",
+      "en": "Core Commercial Principle",
+      "ar": "المبدأ التجاري"
+    },
+    {
+      "key": "model.text.005",
+      "sectionKey": "model",
+      "en": "Lead Fee",
+      "ar": "رسوم الفرصة"
+    },
+    {
+      "key": "model.text.006",
+      "sectionKey": "model",
+      "en": "A fixed, predictable micro-fee paid strictly upon unlocking client telephone and WhatsApp credentials.",
+      "ar": "رسم ثابت ومحدد لفتح بيانات الاتصال بالعميل."
+    },
+    {
+      "key": "model.text.007",
+      "sectionKey": "model",
+      "en": "✓",
+      "ar": "✓"
+    },
+    {
+      "key": "model.text.008",
+      "sectionKey": "model",
+      "en": "No recurring monthly retainers",
+      "ar": "بدون اشتراك شهري متكرر"
+    },
+    {
+      "key": "model.text.009",
+      "sectionKey": "model",
+      "en": "✓",
+      "ar": "✓"
+    },
+    {
+      "key": "model.text.010",
+      "sectionKey": "model",
+      "en": "Zero commission tracking or invoice audits",
+      "ar": "بدون تتبع عمولات أو تدقيق فواتير"
+    },
+    {
+      "key": "model.text.011",
+      "sectionKey": "model",
+      "en": "✓",
+      "ar": "✓"
+    },
+    {
+      "key": "model.text.012",
+      "sectionKey": "model",
+      "en": "Suppliers only pay when they see profitable fit",
+      "ar": "يختار المورد الفرص المناسبة له"
+    },
+    {
+      "key": "model.text.013",
+      "sectionKey": "model",
+      "en": "Why Traditional Construction Marketplaces Fail — And Why Ours Thrives",
+      "ar": "تحديات أسواق المقاولات التقليدية وحلول المنصة"
+    },
+    {
+      "key": "model.text.014",
+      "sectionKey": "model",
+      "en": "In the contracting sector, taking a percentage of the final contract (e.g., 5% of a 500,000 SAR build) never works. Clients and contractors inevitably take the conversation offline and pay with cash to evade the platform fee.",
+      "ar": "العمولة كنسبة من قيمة العقد قد تدفع الأطراف إلى إتمام التعاقد خارج المنصة لتجنب الرسوم."
+    },
+    {
+      "key": "model.text.015",
+      "sectionKey": "model",
+      "en": "By collecting a modest ",
+      "ar": "عند تحصيل "
+    },
+    {
+      "key": "model.text.016",
+      "sectionKey": "model",
+      "en": "flat fee at the instant of unlocking",
+      "ar": "رسم ثابت وقت فتح بيانات التواصل"
+    },
+    {
+      "key": "model.text.017",
+      "sectionKey": "model",
+      "en": ", value is captured immediately. The platform facilitates the connection, the supplier pays instantly via Apple Pay or Mada, and both parties transact with zero friction.",
+      "ar": "، تتحقق قيمة الخدمة مباشرة ويتواصل الطرفان بسهولة."
+    },
+    {
+      "key": "model.text.018",
+      "sectionKey": "model",
+      "en": "100%",
+      "ar": "100%"
+    },
+    {
+      "key": "model.text.019",
+      "sectionKey": "model",
+      "en": "Cash flow realization at point of unlock",
+      "ar": "تحصيل الرسوم وقت فتح الفرصة"
+    },
+    {
+      "key": "model.text.020",
+      "sectionKey": "model",
+      "en": "0%",
+      "ar": "0%"
+    },
+    {
+      "key": "model.text.021",
+      "sectionKey": "model",
+      "en": "Platform evasion & offline commission disputes",
+      "ar": "نزاعات العمولات والتعامل خارج المنصة"
+    },
+    {
+      "key": "model.text.022",
+      "sectionKey": "model",
+      "en": "Transparent Pricing Schedule",
+      "ar": "جدول أسعار شفاف"
+    },
+    {
+      "key": "model.text.023",
+      "sectionKey": "model",
+      "en": "Predictable Opportunity Tiers",
+      "ar": "شرائح رسوم الفرص"
+    },
+    {
+      "key": "model.text.024",
+      "sectionKey": "model",
+      "en": "/ lead",
+      "ar": "/ فرصة"
+    },
+    {
+      "key": "model.text.025",
+      "sectionKey": "model",
+      "en": "Future payment options",
+      "ar": "خيارات دفع مستقبلية"
+    },
+    {
+      "key": "model.text.026",
+      "sectionKey": "model",
+      "en": "Direct WhatsApp",
+      "ar": "تواصل مباشر عبر واتساب"
+    },
+    {
+      "key": "model.text.027",
+      "sectionKey": "model",
+      "en": "Interactive Calculator",
+      "ar": "حاسبة تفاعلية"
+    },
+    {
+      "key": "model.text.028",
+      "sectionKey": "model",
+      "en": "Calculate Contractor Return On Investment (ROI)",
+      "ar": "احسب العائد على الاستثمار للمقاول"
+    },
+    {
+      "key": "model.text.029",
+      "sectionKey": "model",
+      "en": "Adjust contract values and closing rates to see how economical lead fees are compared to paying traditional 10% agent broker fees.",
+      "ar": "عدّل قيمة المشروع ونسبة الفوز للمقارنة بين رسوم الفرص وعمولات الوسطاء التقليدية."
+    },
+    {
+      "key": "model.text.030",
+      "sectionKey": "model",
+      "en": "Expected Project Value",
+      "ar": "قيمة المشروع المتوقعة"
+    },
+    {
+      "key": "model.text.031",
+      "sectionKey": "model",
+      "en": " SAR",
+      "ar": " ريال"
+    },
+    {
+      "key": "model.text.032",
+      "sectionKey": "model",
+      "en": "Contractor Closing Rate",
+      "ar": "نسبة الفوز بالعقود"
+    },
+    {
+      "key": "model.text.033",
+      "sectionKey": "model",
+      "en": "% (1 in ",
+      "ar": "٪ (فرصة واحدة من "
+    },
+    {
+      "key": "model.text.034",
+      "sectionKey": "model",
+      "en": " leads)",
+      "ar": " فرص)"
+    },
+    {
+      "key": "model.text.035",
+      "sectionKey": "model",
+      "en": "Total Lead Fee Cost",
+      "ar": "إجمالي رسوم الفرص"
+    },
+    {
+      "key": "model.text.036",
+      "sectionKey": "model",
+      "en": " SAR",
+      "ar": " ريال"
+    },
+    {
+      "key": "model.text.037",
+      "sectionKey": "model",
+      "en": "To secure 1 won project",
+      "ar": "للفوز بمشروع واحد"
+    },
+    {
+      "key": "model.text.038",
+      "sectionKey": "model",
+      "en": "Customer Acquisition Cost",
+      "ar": "تكلفة اكتساب العميل"
+    },
+    {
+      "key": "model.text.039",
+      "sectionKey": "model",
+      "en": "%",
+      "ar": "%"
+    },
+    {
+      "key": "model.text.040",
+      "sectionKey": "model",
+      "en": "Of total project gross",
+      "ar": "من إجمالي قيمة المشروع"
+    },
+    {
+      "key": "model.text.041",
+      "sectionKey": "model",
+      "en": "💡 ",
+      "ar": "💡 "
+    },
+    {
+      "key": "model.text.042",
+      "sectionKey": "model",
+      "en": "Commercial Insight:",
+      "ar": "رؤية تجارية:"
+    },
+    {
+      "key": "model.text.043",
+      "sectionKey": "model",
+      "en": " By paying only ",
+      "ar": " بدفع "
+    },
+    {
+      "key": "model.text.044",
+      "sectionKey": "model",
+      "en": " SAR",
+      "ar": " ريال"
+    },
+    {
+      "key": "model.text.045",
+      "sectionKey": "model",
+      "en": " in lead unlock fees, the contractor pockets a ",
+      "ar": " في رسوم الفرص، يحصل المقاول على عقد بقيمة "
+    },
+    {
+      "key": "model.text.046",
+      "sectionKey": "model",
+      "en": " SAR",
+      "ar": " ريال"
+    },
+    {
+      "key": "model.text.047",
+      "sectionKey": "model",
+      "en": " contract — saving over ",
+      "ar": " ويوفر أكثر من "
+    },
+    {
+      "key": "model.text.048",
+      "sectionKey": "model",
+      "en": " SAR",
+      "ar": " ريال"
+    },
+    {
+      "key": "model.text.049",
+      "sectionKey": "model",
+      "en": " compared to paying customary 8-10% construction brokers!",
+      "ar": " مقارنة بعمولات الوسطاء التقليدية بين ٨ و١٠٪."
+    },
+    {
+      "key": "navbar.text.001",
+      "sectionKey": "navbar",
+      "en": "T",
+      "ar": "ت"
+    },
+    {
+      "key": "navbar.text.002",
+      "sectionKey": "navbar",
+      "en": "Tawreed Platform",
+      "ar": "منصّة توريد"
+    },
+    {
+      "key": "navbar.text.003",
+      "sectionKey": "navbar",
+      "en": "Chapter One · Contracting",
+      "ar": "الفصل الأول · المقاولات"
+    },
+    {
+      "key": "navbar.text.010",
+      "sectionKey": "navbar",
+      "en": "Translate between English and Arabic",
+      "ar": "التبديل بين العربية والإنجليزية"
+    },
+    {
+      "key": "scenes.text.001",
+      "sectionKey": "scenes",
+      "en": "Act III · Sequence of Events",
+      "ar": "الفصل الثالث · تسلسل الأحداث"
+    },
+    {
+      "key": "scenes.text.002",
+      "sectionKey": "scenes",
+      "en": "Five Scenes: From Request to Final Award",
+      "ar": "من الطلب إلى الترسية"
+    },
+    {
+      "key": "scenes.text.003",
+      "sectionKey": "scenes",
+      "en": "Click any step below to reveal the internal mechanics of how requests transform into guaranteed, certified price quotes in minutes.",
+      "ar": "اختر خطوة لاستكشاف آلية تحويل الطلبات إلى عروض أسعار موحدة."
+    },
+    {
+      "key": "scenes.text.004",
+      "sectionKey": "scenes",
+      "en": "Scene ",
+      "ar": "الخطوة "
+    },
+    {
+      "key": "scenes.text.005",
+      "sectionKey": "scenes",
+      "en": " of ",
+      "ar": " من "
+    },
+    {
+      "key": "scenes.text.006",
+      "sectionKey": "scenes",
+      "en": "✓",
+      "ar": "✓"
+    },
+    {
+      "key": "scenes.text.007",
+      "sectionKey": "scenes",
+      "en": "Terminal / Scene_",
+      "ar": "محاكاة / خطوة_"
+    },
+    {
+      "key": "scenes.text.008",
+      "sectionKey": "scenes",
+      "en": ".log",
+      "ar": ".سجل"
+    },
+    {
+      "key": "scenes.text.009",
+      "sectionKey": "scenes",
+      "en": "Live Flow",
+      "ar": "تدفق تجريبي"
+    },
+    {
+      "key": "scenes.text.010",
+      "sectionKey": "scenes",
+      "en": "STATE:",
+      "ar": "الحالة:"
+    },
+    {
+      "key": "scenes.text.011",
+      "sectionKey": "scenes",
+      "en": "Processing ",
+      "ar": "جارٍ المعالجة "
+    },
+    {
+      "key": "scenes.text.012",
+      "sectionKey": "scenes",
+      "en": "...",
+      "ar": "..."
+    },
+    {
+      "key": "scenes.text.013",
+      "sectionKey": "scenes",
+      "en": "INTEGRATION:",
+      "ar": "التكامل:"
+    },
+    {
+      "key": "scenes.text.014",
+      "sectionKey": "scenes",
+      "en": "Illustrative tax and commerce integration.",
+      "ar": "نموذج توضيحي لتكامل التجارة والضريبة."
+    },
+    {
+      "key": "scenes.text.015",
+      "sectionKey": "scenes",
+      "en": "DISPATCH:",
+      "ar": "الإرسال:"
+    },
+    {
+      "key": "scenes.text.016",
+      "sectionKey": "scenes",
+      "en": "SLA response guaranteed under 5 minutes.",
+      "ar": "زمن استجابة مستهدف أقل من خمس دقائق."
+    },
+    {
+      "key": "scenes.text.017",
+      "sectionKey": "scenes",
+      "en": "← Previous",
+      "ar": "السابق"
+    },
+    {
+      "key": "scenes.text.018",
+      "sectionKey": "scenes",
+      "en": "Next Scene →",
+      "ar": "الخطوة التالية"
+    },
+    {
+      "key": "scenes.text.019",
+      "sectionKey": "scenes",
+      "en": "75% Faster",
+      "ar": "أسرع بنسبة ٧٥٪"
+    },
+    {
+      "key": "scenes.text.020",
+      "sectionKey": "scenes",
+      "en": "Compared to traditional WhatsApp & phone negotiations",
+      "ar": "مقارنة بالمفاوضات التقليدية عبر الهاتف وواتساب"
+    },
+    {
+      "key": "scenes.text.021",
+      "sectionKey": "scenes",
+      "en": "100% Audit Trail",
+      "ar": "سجل تدقيق كامل"
+    },
+    {
+      "key": "scenes.text.022",
+      "sectionKey": "scenes",
+      "en": "All quotes are timestamped and digitally documented",
+      "ar": "توثيق رقمي مؤرخ لجميع عروض الأسعار"
+    },
+    {
+      "key": "scenes.text.023",
+      "sectionKey": "scenes",
+      "en": "Zero Markup",
+      "ar": "بدون زيادة على السعر"
+    },
+    {
+      "key": "scenes.text.024",
+      "sectionKey": "scenes",
+      "en": "Direct transparent pricing straight from the supplier's book",
+      "ar": "أسعار شفافة مباشرة من دليل المورد"
+    },
+    {
+      "key": "crew.verificationPending",
+      "sectionKey": "crew",
+      "en": "Verification pending",
+      "ar": "قيد التحقق"
+    },
+    {
+      "key": "demo.supplierLabel",
+      "sectionKey": "demo",
+      "en": "Demo supplier",
+      "ar": "المورد التجريبي"
+    },
+    {
+      "key": "demo.noSupplier",
+      "sectionKey": "demo",
+      "en": "No suppliers available",
+      "ar": "لا يوجد موردون"
+    }
+  ],
+  "divisions": [
+    {
+      "id": "civil",
+      "category": "structural",
+      "title": "Civil & General Contracting",
+      "tag": "Core Division",
+      "description": "Foundations, concrete casting, structural masonry, and turn-key site management from ground zero to handover.",
+      "services": [
+        "Concrete Pouring (per m²)",
+        "Brickwork & Masonry",
+        "Excavation & Earthworks",
+        "Turnkey Contracting"
+      ],
+      "sla": "Instant Matching",
+      "color": "emerald",
+      "titleAr": "مقاولات عامة وإنشائية",
+      "descriptionAr": "الأساسات وصب الخرسانة والبناء وإدارة الموقع من البداية إلى التسليم.",
+      "servicesAr": [
+        "صب الخرسانة",
+        "أعمال البناء والطوب",
+        "الحفر والأعمال الترابية",
+        "مقاولات تسليم مفتاح"
+      ],
+      "tagAr": "تخصص أساسي",
+      "slaAr": "مطابقة فورية"
+    },
+    {
+      "id": "mep",
+      "category": "engineering",
+      "title": "MEP (Electrical & Plumbing)",
+      "tag": "Critical Utilities",
+      "description": "Standardized utility grids, certified electrical point layout, industrial drainage, and master piping supply.",
+      "services": [
+        "Electrical Point Distribution",
+        "Piping & Water Supply",
+        "Circuit Panel Setup",
+        "Sanitary Rough-in"
+      ],
+      "sla": "5 Min Response",
+      "color": "emerald",
+      "titleAr": "كهرباء وسباكة هندسية",
+      "descriptionAr": "تجهيز الشبكات الكهربائية والسباكة والصرف الصحي وتوريد المرافق.",
+      "servicesAr": [
+        "توزيع نقاط الكهرباء",
+        "أنابيب وتوريد المياه",
+        "تركيب لوحات القواطع",
+        "تأسيس الصرف الصحي"
+      ],
+      "tagAr": "مرافق حيوية",
+      "slaAr": "استجابة خلال خمس دقائق"
+    },
+    {
+      "id": "hvac",
+      "category": "engineering",
+      "title": "HVAC & Climate Control",
+      "tag": "Climate Tech",
+      "description": "Split system installations, centralized duct routing, regular maintenance, and industrial-grade Freon supplies.",
+      "services": [
+        "Split Unit Installation",
+        "Centralized Duct Routing",
+        "Compressor Overhaul",
+        "Freon Recharge"
+      ],
+      "sla": "Certified Technicians",
+      "color": "gold",
+      "titleAr": "أنظمة التكييف والتبريد",
+      "descriptionAr": "تركيب أجهزة التكييف والقنوات المركزية والصيانة وتعبئة غاز التبريد.",
+      "servicesAr": [
+        "تركيب أجهزة التكييف",
+        "تمديد القنوات المركزية",
+        "صيانة الضواغط",
+        "تعبئة غاز التبريد"
+      ],
+      "tagAr": "تقنيات التكييف",
+      "slaAr": "فنيون معتمدون"
+    },
+    {
+      "id": "finishing",
+      "category": "fitout",
+      "title": "Architectural Finishing & Decor",
+      "tag": "Interior Fitout",
+      "description": "Luxury interior treatments, smooth wall coatings, suspended gypsum acoustic ceilings, and ambient spotlight grids.",
+      "services": [
+        "Wall Painting & Texture",
+        "Gypsum Board Ceilings",
+        "Architectural Lighting",
+        "Porcelain & Flooring"
+      ],
+      "sla": "Quality Guaranteed",
+      "color": "gold",
+      "titleAr": "التشطيبات والديكور",
+      "descriptionAr": "تشطيبات داخلية ودهانات وأسقف جبسية وإضاءة وأرضيات.",
+      "servicesAr": [
+        "دهانات الجدران",
+        "أسقف جبسية",
+        "إضاءة معمارية",
+        "بورسلان وأرضيات"
+      ],
+      "tagAr": "تشطيبات داخلية",
+      "slaAr": "جودة مضمونة"
+    },
+    {
+      "id": "insulation",
+      "category": "structural",
+      "title": "Waterproofing & Insulation",
+      "tag": "Building Protection",
+      "description": "Saudi code-compliant thermal roof insulation, bituminous waterproofing membranes, and chemical protective coatings.",
+      "services": [
+        "Rooftop Waterproofing",
+        "Thermal Barrier Foam",
+        "Protective Topcoats",
+        "Basement Tanking"
+      ],
+      "sla": "Certified Materials",
+      "color": "emerald",
+      "titleAr": "العزل المائي والحراري",
+      "descriptionAr": "عزل الأسطح حرارياً ومائياً والأغشية والطلاءات الواقية.",
+      "servicesAr": [
+        "عزل الأسطح",
+        "عزل حراري بالرغوة",
+        "طلاءات واقية",
+        "عزل الأقبية"
+      ],
+      "tagAr": "حماية المباني",
+      "slaAr": "مواد معتمدة"
+    },
+    {
+      "id": "steel",
+      "category": "structural",
+      "title": "Structural Steel & Metalwork",
+      "tag": "Industrial",
+      "description": "Prefabricated metal canopies, hangar structural steel, wrought iron safety railings, and reinforced perimeter fencing.",
+      "services": [
+        "Steel Hangars & Framing",
+        "Wrought Iron Gates",
+        "Safety Stair Railings",
+        "Custom Sheet Metal"
+      ],
+      "sla": "Heavy Duty",
+      "color": "emerald",
+      "titleAr": "أعمال الحديد والهياكل",
+      "descriptionAr": "هياكل فولاذية ومظلات وبوابات وسلالم ودرابزين وأعمال معدنية.",
+      "servicesAr": [
+        "هياكل ومستودعات فولاذية",
+        "بوابات حديد",
+        "درابزين سلالم",
+        "صفائح معدنية مخصصة"
+      ],
+      "tagAr": "صناعي",
+      "slaAr": "أعمال ثقيلة"
+    }
+  ],
+  "participants": [
+    {
+      "type": "supplier",
+      "name": "Smartinbox Establishment",
+      "arabicName": "مؤسسة سمات إنبوكس للمقاولات",
+      "role": "Featured Verified Supplier",
+      "avatarText": "S",
+      "city": "Riyadh, Saudi Arabia",
+      "crNumber": "CR 1010784920",
+      "rating": "4.95 / 5.0",
+      "quoteTurnaround": "< 5 Mins",
+      "specialty": "Civil Works, MEP Utilities & HVAC",
+      "projectsDone": "140+ Projects",
+      "isVerified": true,
+      "badgeColor": "emerald",
+      "descriptionAr": "مورد مقاولات موثّق",
+      "specialtyAr": "الأعمال المدنية والكهرباء والسباكة والتكييف",
+      "coverageAr": "الرياض، المملكة العربية السعودية",
+      "projectsAr": "مشاريع وخبرات سابقة",
+      "turnaroundAr": "استجابة سريعة"
+    },
+    {
+      "type": "client",
+      "name": "Karam Al-Watan Co.",
+      "arabicName": "شركة كرم الوطن للتطوير العقاري",
+      "role": "Enterprise Buyer & Client",
+      "avatarText": "K",
+      "city": "Riyadh, Saudi Arabia",
+      "crNumber": "CR 1010452319",
+      "rating": "Verified Buyer",
+      "quoteTurnaround": "Active Requester",
+      "specialty": "Commercial Developments & Turnkey Sites",
+      "projectsDone": "28 Active RFQs",
+      "isVerified": true,
+      "badgeColor": "gold",
+      "descriptionAr": "عميل ومطور مشاريع",
+      "specialtyAr": "مشاريع وتطوير عقاري",
+      "coverageAr": "الرياض، المملكة العربية السعودية",
+      "projectsAr": "مشاريع تطوير",
+      "turnaroundAr": "عميل نشط"
+    },
+    {
+      "type": "supplier",
+      "name": "Al-Safwa MEP Engineering",
+      "arabicName": "شركة الصفوة للأنظمة الكهروميكانيكية",
+      "role": "Specialized MEP Contractor",
+      "avatarText": "A",
+      "city": "Jeddah & Western Province",
+      "crNumber": "CR 4030219842",
+      "rating": "4.91 / 5.0",
+      "quoteTurnaround": "< 8 Mins",
+      "specialty": "Industrial Electrical Panels & Chilled Water Lines",
+      "projectsDone": "85+ Projects",
+      "isVerified": true,
+      "badgeColor": "emerald",
+      "descriptionAr": "مورد مقاولات موثّق",
+      "specialtyAr": "الأعمال المدنية والكهرباء والسباكة والتكييف",
+      "coverageAr": "جدة والمنطقة الغربية",
+      "projectsAr": "مشاريع وخبرات سابقة",
+      "turnaroundAr": "استجابة سريعة"
+    },
+    {
+      "type": "client",
+      "name": "Riyadh Horizon Developments",
+      "arabicName": "مشاريع أفق الرياض المعمارية",
+      "role": "Commercial Contractor & Developer",
+      "avatarText": "R",
+      "city": "Riyadh & Eastern Province",
+      "crNumber": "CR 1010992381",
+      "rating": "Tier-1 Client",
+      "quoteTurnaround": "Immediate Issuer",
+      "specialty": "Mixed-Use Plazas & Villa Communities",
+      "projectsDone": "42 Active RFQs",
+      "isVerified": true,
+      "badgeColor": "gold",
+      "descriptionAr": "عميل ومطور مشاريع",
+      "specialtyAr": "مشاريع وتطوير عقاري",
+      "coverageAr": "الرياض، المملكة العربية السعودية",
+      "projectsAr": "مشاريع تطوير",
+      "turnaroundAr": "عميل نشط"
+    }
+  ],
+  "scenes": [
+    {
+      "num": "01",
+      "title": "Structured Request Intake",
+      "shortDesc": "Client inputs project scope, quantities, and site location.",
+      "badge": "Step 1: Input",
+      "detailTitle": "Automated Bill of Quantities (BoQ) Builder",
+      "detailDesc": "Instead of messy text messages, clients specify precise line items (e.g., concrete volume in m³, piping length, AC tonnage). Blueprints and site drawings can be securely attached.",
+      "specs": [
+        "Precise line-item quantity inputs",
+        "Geotagged site location (Riyadh, Jeddah, Eastern Province)",
+        "Delivery schedule & milestone dates"
+      ],
+      "mockTag": "Client Submission Engine",
+      "titleAr": "تسجيل الطلب والمواصفات",
+      "shortDescAr": "يدخل العميل نطاق العمل والكميات وموقع المشروع.",
+      "badgeAr": "الخطوة الأولى: الإدخال",
+      "detailTitleAr": "إعداد جدول الكميات",
+      "detailDescAr": "تحديد الخدمات والكميات ومواعيد التنفيذ وموقع المشروع بطريقة منظمة.",
+      "specsAr": ["كميات دقيقة لكل خدمة", "موقع المشروع", "جدول التسليم"],
+      "mockTagAr": "محاكاة تسجيل الطلب"
+    },
+    {
+      "num": "02",
+      "title": "Automated Categorization",
+      "shortDesc": "The request is parsed and assigned to the exact division.",
+      "badge": "Step 2: Analysis",
+      "detailTitle": "Intelligent Tagging & Code Compliance",
+      "detailDesc": "The system automatically validates the request against the Saudi Building Code (SBC) standards and tags it with the appropriate division (Civil, MEP, HVAC, or Fitout).",
+      "specs": [
+        "Instant division routing with zero human delay",
+        "Filter out incomplete or spam inquiries",
+        "Material grade compatibility check"
+      ],
+      "mockTag": "Algorithmic Tagging",
+      "titleAr": "التصنيف والفرز التلقائي",
+      "shortDescAr": "تصنيف الطلب حسب التخصص.",
+      "badgeAr": "الخطوة الثانية: التحليل",
+      "detailTitleAr": "التصنيف والتحقق من المتطلبات",
+      "detailDescAr": "نموذج توضيحي لتوجيه الطلب إلى التخصص المناسب والتحقق من اكتماله.",
+      "specsAr": ["توجيه حسب التخصص", "التحقق من البيانات", "ملاءمة المواد"],
+      "mockTagAr": "محاكاة التصنيف"
+    },
+    {
+      "num": "03",
+      "title": "Targeted Supplier Dispatch",
+      "shortDesc": "Only verified matching suppliers in the region get notified.",
+      "badge": "Step 3: Notification",
+      "detailTitle": "Zero-Spam High-Intent Opportunity Alerts",
+      "detailDesc": "Suppliers only receive requests that match their verified capabilities, city radius, and warehouse stock. Notifications are dispatched via SMS, WhatsApp API, and Supplier Dashboard.",
+      "specs": [
+        "Encrypted opportunity alerts sent in < 45 seconds",
+        "Suppliers see project scope before deciding to unlock",
+        "Strict geographic fencing to prevent logistical mismatches"
+      ],
+      "mockTag": "Dispatch Pipeline",
+      "titleAr": "إشعار الموردين المطابقين",
+      "shortDescAr": "إشعار الموردين المناسبين في المنطقة.",
+      "badgeAr": "الخطوة الثالثة: الإشعار",
+      "detailTitleAr": "تنبيهات فرص مناسبة",
+      "detailDescAr": "نموذج لتوجيه الفرص إلى الموردين وفق التخصص والتغطية الجغرافية.",
+      "specsAr": [
+        "إشعارات بالفرص",
+        "مراجعة نطاق المشروع",
+        "تغطية جغرافية محددة"
+      ],
+      "mockTagAr": "محاكاة إرسال الإشعارات"
+    },
+    {
+      "num": "04",
+      "title": "Standardized Quotation Matrix",
+      "shortDesc": "Quotes generated directly from real supplier price books.",
+      "badge": "Step 4: Generation",
+      "detailTitle": "Apples-to-Apples Transparent Pricing",
+      "detailDesc": "Quotes follow a unified format: unit prices, labor vs material breakdown, execution timeframe, and official ZATCA 15% VAT calculation. No hidden surcharges.",
+      "specs": [
+        "Standardized PDF and digital quotation format",
+        "Clear price breakdown per unit of measurement",
+        "Automatic 7-day validity lock for cost protection"
+      ],
+      "mockTag": "Automated Quotation Engine",
+      "titleAr": "استلام عروض الأسعار الموحدة",
+      "shortDescAr": "توليد عروض موحدة من الكتالوج.",
+      "badgeAr": "الخطوة الرابعة: العرض",
+      "detailTitleAr": "أسعار شفافة قابلة للمقارنة",
+      "detailDescAr": "عرض تفاصيل أسعار الوحدات والكميات والضريبة في نموذج موحد.",
+      "specsAr": ["تفصيل أسعار الوحدات", "تنسيق موحد للعرض", "صلاحية محددة"],
+      "mockTagAr": "محاكاة عروض الأسعار"
+    },
+    {
+      "num": "05",
+      "title": "Award & Direct Execution",
+      "shortDesc": "Client selects the winning quote and unlocks direct contacts.",
+      "badge": "Step 5: Fulfillment",
+      "detailTitle": "Frictionless Deal Closing & Lead Fee Unlock",
+      "detailDesc": "The client reviews the best quote. Once ready to proceed, the supplier pays a micro opportunity fee to unlock direct contact numbers and schedule site execution.",
+      "specs": [
+        "Direct phone and WhatsApp connection for site meeting",
+        "Clear payment terms and milestone deliverables",
+        "Mutual post-project evaluation and rating"
+      ],
+      "mockTag": "Closing & Execution",
+      "titleAr": "المقارنة والترسية المباشرة",
+      "shortDescAr": "اختيار العرض وفتح التواصل.",
+      "badgeAr": "الخطوة الخامسة: التواصل",
+      "detailTitleAr": "ترسية وتواصل مباشر",
+      "detailDescAr": "نموذج لتوضيح مقارنة العروض والتواصل مع المورد المختار.",
+      "specsAr": [
+        "بيانات تواصل مباشرة",
+        "شروط ومراحل واضحة",
+        "تقييم بعد التنفيذ"
+      ],
+      "mockTagAr": "محاكاة الترسية"
+    }
+  ],
+  "categories": [
+    {
+      "id": "General Contracting",
+      "label": "General Contracting",
+      "icon": "🏗️",
+      "arabic": "مقاولات عامة"
+    },
+    {
+      "id": "Plumbing & Electrical",
+      "label": "Plumbing & Electrical",
+      "icon": "⚡",
+      "arabic": "كهرباء وسباكة"
+    },
+    {
+      "id": "HVAC & Cooling",
+      "label": "HVAC & Cooling",
+      "icon": "❄️",
+      "arabic": "تكييف وتبريد"
+    },
+    {
+      "id": "Interior & Decor",
+      "label": "Interior & Decor",
+      "icon": "🎨",
+      "arabic": "ديكور وتشطيبات"
+    },
+    {
+      "id": "Waterproofing",
+      "label": "Waterproofing & Insulation",
+      "icon": "🛡️",
+      "arabic": "عزل مائي وحراري"
+    }
+  ],
+  "cities": [
+    {
+      "name": "Riyadh",
+      "arabic": "الرياض"
+    },
+    {
+      "name": "Jeddah",
+      "arabic": "جدة"
+    },
+    {
+      "name": "Dammam",
+      "arabic": "الدمام"
+    },
+    {
+      "name": "Khobar",
+      "arabic": "الخبر"
+    }
+  ],
+  "catalogData": {
+    "General Contracting": [
+      {
+        "id": "gc-1",
+        "name": "Concrete Pouring & Casting (per m²)",
+        "price": 45,
+        "unit": "m²",
+        "nameAr": "صب الخرسانة (للمتر المربع)",
+        "unitAr": "م²"
+      },
+      {
+        "id": "gc-2",
+        "name": "Brickwork & Structural Masonry (per m²)",
+        "price": 60,
+        "unit": "m²",
+        "nameAr": "البناء بالطوب (للمتر المربع)",
+        "unitAr": "م²"
+      },
+      {
+        "id": "gc-3",
+        "name": "Skilled Construction Labor Crew (daily rate)",
+        "price": 180,
+        "unit": "day",
+        "nameAr": "فريق عمالة بناء (يومياً)",
+        "unitAr": "يوم"
+      },
+      {
+        "id": "gc-4",
+        "name": "Site Foundation Leveling & Compaction",
+        "price": 95,
+        "unit": "m²",
+        "nameAr": "تسوية وضغط الأساسات",
+        "unitAr": "م²"
+      }
+    ],
+    "Plumbing & Electrical": [
+      {
+        "id": "pe-1",
+        "name": "Electrical Outlet Point Layout & Wiring",
+        "price": 35,
+        "unit": "point",
+        "nameAr": "تمديد نقاط الكهرباء",
+        "unitAr": "نقطة"
+      },
+      {
+        "id": "pe-2",
+        "name": "Piping & Master Water Lines (per meter)",
+        "price": 25,
+        "unit": "meter",
+        "nameAr": "تمديد خطوط المياه",
+        "unitAr": "متر"
+      },
+      {
+        "id": "pe-3",
+        "name": "Main Circuit Breaker Panel Installation",
+        "price": 120,
+        "unit": "panel",
+        "nameAr": "تركيب لوحة قواطع رئيسية",
+        "unitAr": "لوحة"
+      },
+      {
+        "id": "pe-4",
+        "name": "Bathroom Drainage & Trap Rough-in",
+        "price": 85,
+        "unit": "set",
+        "nameAr": "تأسيس صرف الحمام",
+        "unitAr": "مجموعة"
+      }
+    ],
+    "HVAC & Cooling": [
+      {
+        "id": "hvac-1",
+        "name": "Split Unit Routine Service & Cleaning",
+        "price": 120,
+        "unit": "unit",
+        "nameAr": "صيانة وتنظيف المكيف",
+        "unitAr": "وحدة"
+      },
+      {
+        "id": "hvac-2",
+        "name": "High-Purity Freon Refrigerant Recharge",
+        "price": 150,
+        "unit": "fill",
+        "nameAr": "تعبئة غاز التبريد",
+        "unitAr": "تعبئة"
+      },
+      {
+        "id": "hvac-3",
+        "name": "Brand-New Split AC Unit Installation",
+        "price": 300,
+        "unit": "unit",
+        "nameAr": "تركيب مكيف جديد",
+        "unitAr": "وحدة"
+      },
+      {
+        "id": "hvac-4",
+        "name": "Centralized Duct Airflow Balancing",
+        "price": 250,
+        "unit": "zone",
+        "nameAr": "موازنة تدفق الهواء",
+        "unitAr": "منطقة"
+      }
+    ],
+    "Interior & Decor": [
+      {
+        "id": "id-1",
+        "name": "Interior Wall Painting & Smoothing (per m²)",
+        "price": 15,
+        "unit": "m²",
+        "nameAr": "دهان الجدران",
+        "unitAr": "م²"
+      },
+      {
+        "id": "id-2",
+        "name": "Gypsum Board Suspended Ceiling (per m²)",
+        "price": 55,
+        "unit": "m²",
+        "nameAr": "سقف جبسي معلق",
+        "unitAr": "م²"
+      },
+      {
+        "id": "id-3",
+        "name": "Architectural LED Concealed Spotlight Point",
+        "price": 90,
+        "unit": "point",
+        "nameAr": "نقطة إضاءة مخفية",
+        "unitAr": "نقطة"
+      },
+      {
+        "id": "id-4",
+        "name": "High-Traffic Epoxy Floor Coating (per m²)",
+        "price": 45,
+        "unit": "m²",
+        "nameAr": "طلاء أرضية إيبوكسي",
+        "unitAr": "م²"
+      }
+    ],
+    "Waterproofing": [
+      {
+        "id": "wp-1",
+        "name": "Bituminous Rooftop Waterproofing (per m²)",
+        "price": 35,
+        "unit": "m²",
+        "nameAr": "عزل الأسطح بالبيتومين",
+        "unitAr": "م²"
+      },
+      {
+        "id": "wp-2",
+        "name": "Rigid Thermal Polyurethane Insulation (per m²)",
+        "price": 40,
+        "unit": "m²",
+        "nameAr": "عزل حراري بالبولي يوريثان",
+        "unitAr": "م²"
+      },
+      {
+        "id": "wp-3",
+        "name": "Acrylic Final Protective Topcoat (per m²)",
+        "price": 20,
+        "unit": "m²",
+        "nameAr": "طلاء حماية أكريليك",
+        "unitAr": "م²"
+      },
+      {
+        "id": "wp-4",
+        "name": "Basement Underground Tanking Membrane",
+        "price": 65,
+        "unit": "m²",
+        "nameAr": "غشاء عزل الأقبية",
+        "unitAr": "م²"
+      }
+    ]
+  },
+  "tiers": [
+    {
+      "name": "Minor Works & Maintenance",
+      "scope": "Projects under 10,000 SAR",
+      "fee": "35 SAR",
+      "description": "Quick repair jobs, single AC installs, painting rooms, minor plumbing leaks.",
+      "color": "emerald"
+    },
+    {
+      "name": "Standard MEP & Renovations",
+      "scope": "Projects 10,000 – 50,000 SAR",
+      "fee": "75 SAR",
+      "description": "Full apartment electrical rewiring, central HVAC maintenance, waterproofing.",
+      "color": "gold"
+    },
+    {
+      "name": "Major Turnkey & Structural",
+      "scope": "Projects over 50,000 SAR",
+      "fee": "150 SAR",
+      "description": "Full villa construction, commercial fitouts, concrete structural casting.",
+      "color": "gold"
+    }
+  ]
+}

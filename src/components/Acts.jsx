@@ -1,139 +1,60 @@
-import React, { useState } from 'react';
+"use client";
 
+import { useLanding } from "./landing-context";
+import React, { useState } from "react";
 export default function Acts() {
-  const [activeCategory, setActiveCategory] = useState('all');
-
-  const divisions = [
-    {
-      id: 'civil',
-      category: 'structural',
-      title: 'Civil & General Contracting',
-      arabicTitle: 'مقاولات عامة وإنشائية',
-      tag: 'Core Division',
-      description: 'Foundations, concrete casting, structural masonry, and turn-key site management from ground zero to handover.',
-      services: ['Concrete Pouring (per m²)', 'Brickwork & Masonry', 'Excavation & Earthworks', 'Turnkey Contracting'],
-      sla: 'Instant Matching',
-      color: 'emerald',
-    },
-    {
-      id: 'mep',
-      category: 'engineering',
-      title: 'MEP (Electrical & Plumbing)',
-      arabicTitle: 'كهرباء وسباكة هندسية',
-      tag: 'Critical Utilities',
-      description: 'Standardized utility grids, certified electrical point layout, industrial drainage, and master piping supply.',
-      services: ['Electrical Point Distribution', 'Piping & Water Supply', 'Circuit Panel Setup', 'Sanitary Rough-in'],
-      sla: '5 Min Response',
-      color: 'emerald',
-    },
-    {
-      id: 'hvac',
-      category: 'engineering',
-      title: 'HVAC & Climate Control',
-      arabicTitle: 'أنظمة التكييف والتبريد',
-      tag: 'Climate Tech',
-      description: 'Split system installations, centralized duct routing, regular maintenance, and industrial-grade Freon supplies.',
-      services: ['Split Unit Installation', 'Centralized Duct Routing', 'Compressor Overhaul', 'Freon Recharge'],
-      sla: 'Certified Technicians',
-      color: 'gold',
-    },
-    {
-      id: 'finishing',
-      category: 'fitout',
-      title: 'Architectural Finishing & Decor',
-      arabicTitle: 'التشطيبات والديكور',
-      tag: 'Interior Fitout',
-      description: 'Luxury interior treatments, smooth wall coatings, suspended gypsum acoustic ceilings, and ambient spotlight grids.',
-      services: ['Wall Painting & Texture', 'Gypsum Board Ceilings', 'Architectural Lighting', 'Porcelain & Flooring'],
-      sla: 'Quality Guaranteed',
-      color: 'gold',
-    },
-    {
-      id: 'insulation',
-      category: 'structural',
-      title: 'Waterproofing & Insulation',
-      arabicTitle: 'العزل المائي والحراري',
-      tag: 'Building Protection',
-      description: 'Saudi code-compliant thermal roof insulation, bituminous waterproofing membranes, and chemical protective coatings.',
-      services: ['Rooftop Waterproofing', 'Thermal Barrier Foam', 'Protective Topcoats', 'Basement Tanking'],
-      sla: 'Certified Materials',
-      color: 'emerald',
-    },
-    {
-      id: 'steel',
-      category: 'structural',
-      title: 'Structural Steel & Metalwork',
-      arabicTitle: 'أعمال الحديد والهياكل',
-      tag: 'Industrial',
-      description: 'Prefabricated metal canopies, hangar structural steel, wrought iron safety railings, and reinforced perimeter fencing.',
-      services: ['Steel Hangars & Framing', 'Wrought Iron Gates', 'Safety Stair Railings', 'Custom Sheet Metal'],
-      sla: 'Heavy Duty',
-      color: 'emerald',
-    },
-  ];
+  const { t, divisions, sectionVisible } = useLanding();
+  const [activeCategory, setActiveCategory] = useState("all");
 
   const filteredDivisions =
-    activeCategory === 'all'
+    activeCategory === "all"
       ? divisions
       : divisions.filter((d) => d.category === activeCategory);
-
   return (
-    <section id="acts" className="py-24 px-6 bg-[#131410] relative border-t border-[#f4efe3]/10">
+    <section
+      id="acts"
+      className="py-24 px-6 bg-[#131410] relative border-t border-[#f4efe3]/10"
+    >
       <div className="max-w-7xl mx-auto">
-        
         {/* SECTION HEADER */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-block text-xs font-bold text-[#d9a441] tracking-widest uppercase mb-3 px-3 py-1 bg-[#1d4b3a]/30 border border-[#2f8464]/30 rounded-sm">
-            Act I · Specialized Divisions
+            {t("acts.text.001")}
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-[#f4efe3] tracking-tight">
-            Everything Your Contracting Project Needs
+            {t("acts.text.002")}
           </h2>
           <p className="mt-4 text-[#9a9285] text-base sm:text-lg leading-relaxed">
-            Built from the ground up for the Saudi contracting ecosystem. A single structured request routes automatically to the exact vetted specialists.
+            {t("acts.text.003")}
           </p>
 
           {/* FILTER PILLS */}
           <div className="flex flex-wrap items-center justify-center gap-2 mt-8">
             <button
-              onClick={() => setActiveCategory('all')}
-              className={`px-4 py-2 text-xs font-bold transition-all rounded-xs cursor-pointer ${
-                activeCategory === 'all'
-                  ? 'bg-[#d9a441] text-[#0b0c0a]'
-                  : 'bg-[#0b0c0a] text-[#9a9285] hover:text-[#f4efe3] border border-[#f4efe3]/10'
-              }`}
+              onClick={() => setActiveCategory("all")}
+              className={`px-4 py-2 text-xs font-bold transition-all rounded-xs cursor-pointer ${activeCategory === "all" ? "bg-[#d9a441] text-[#0b0c0a]" : "bg-[#0b0c0a] text-[#9a9285] hover:text-[#f4efe3] border border-[#f4efe3]/10"}`}
             >
-              All Divisions ({divisions.length})
+              {t("acts.text.004")}
+              {divisions.length}
+              {t("acts.text.005")}
             </button>
             <button
-              onClick={() => setActiveCategory('structural')}
-              className={`px-4 py-2 text-xs font-bold transition-all rounded-xs cursor-pointer ${
-                activeCategory === 'structural'
-                  ? 'bg-[#d9a441] text-[#0b0c0a]'
-                  : 'bg-[#0b0c0a] text-[#9a9285] hover:text-[#f4efe3] border border-[#f4efe3]/10'
-              }`}
+              onClick={() => setActiveCategory("structural")}
+              className={`px-4 py-2 text-xs font-bold transition-all rounded-xs cursor-pointer ${activeCategory === "structural" ? "bg-[#d9a441] text-[#0b0c0a]" : "bg-[#0b0c0a] text-[#9a9285] hover:text-[#f4efe3] border border-[#f4efe3]/10"}`}
             >
-              Structural & Civil
+              {t("acts.text.006")}
             </button>
             <button
-              onClick={() => setActiveCategory('engineering')}
-              className={`px-4 py-2 text-xs font-bold transition-all rounded-xs cursor-pointer ${
-                activeCategory === 'engineering'
-                  ? 'bg-[#d9a441] text-[#0b0c0a]'
-                  : 'bg-[#0b0c0a] text-[#9a9285] hover:text-[#f4efe3] border border-[#f4efe3]/10'
-              }`}
+              onClick={() => setActiveCategory("engineering")}
+              className={`px-4 py-2 text-xs font-bold transition-all rounded-xs cursor-pointer ${activeCategory === "engineering" ? "bg-[#d9a441] text-[#0b0c0a]" : "bg-[#0b0c0a] text-[#9a9285] hover:text-[#f4efe3] border border-[#f4efe3]/10"}`}
             >
-              MEP & Utilities
+              {t("acts.text.007")}
             </button>
             <button
-              onClick={() => setActiveCategory('fitout')}
-              className={`px-4 py-2 text-xs font-bold transition-all rounded-xs cursor-pointer ${
-                activeCategory === 'fitout'
-                  ? 'bg-[#d9a441] text-[#0b0c0a]'
-                  : 'bg-[#0b0c0a] text-[#9a9285] hover:text-[#f4efe3] border border-[#f4efe3]/10'
-              }`}
+              onClick={() => setActiveCategory("fitout")}
+              className={`px-4 py-2 text-xs font-bold transition-all rounded-xs cursor-pointer ${activeCategory === "fitout" ? "bg-[#d9a441] text-[#0b0c0a]" : "bg-[#0b0c0a] text-[#9a9285] hover:text-[#f4efe3] border border-[#f4efe3]/10"}`}
             >
-              Finishing & Fitout
+              {t("acts.text.008")}
             </button>
           </div>
         </div>
@@ -177,7 +98,7 @@ export default function Acts() {
                 {/* Services List / Scope */}
                 <div className="mt-6 pt-4 border-t border-[#f4efe3]/10">
                   <p className="text-[0.75rem] font-semibold text-[#f4efe3]/60 uppercase tracking-wider mb-2">
-                    Scope of Supply:
+                    {t("acts.text.009")}
                   </p>
                   <div className="flex flex-wrap gap-1.5">
                     {div.services.map((service, idx) => (
@@ -194,13 +115,15 @@ export default function Acts() {
 
               {/* Card Footer CTA */}
               <div className="mt-8 pt-4 flex items-center justify-between">
-                <a
-                  href="#demo"
-                  className="text-xs font-bold text-[#d9a441] hover:text-[#e8b559] flex items-center gap-1.5 group-hover:translate-x-1 transition-all"
-                >
-                  Request Quote in this Division
-                  <span>→</span>
-                </a>
+                {sectionVisible("demo") && (
+                  <a
+                    href="#demo"
+                    className="text-xs font-bold text-[#d9a441] hover:text-[#e8b559] flex items-center gap-1.5 group-hover:translate-x-1 transition-all"
+                  >
+                    {t("acts.text.010")}
+                    <span>{t("acts.text.011")}</span>
+                  </a>
+                )}
               </div>
             </div>
           ))}
@@ -211,27 +134,32 @@ export default function Acts() {
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
               <span className="text-xs font-bold text-[#b56a3b] uppercase tracking-widest">
-                Upcoming Roadmap · Platform Expansion
+                {t("acts.text.012")}
               </span>
               <h4 className="text-xl sm:text-2xl font-bold text-[#f4efe3] mt-1">
-                More Contracting Ecosystems Coming in Chapter Two & Three
+                {t("acts.text.013")}
               </h4>
               <p className="text-sm text-[#9a9285] mt-1 max-w-2xl">
-                We are actively integrating verified suppliers for heavy machinery leasing (Chapter II) and bulk building material logistics (Chapter III).
+                {t("acts.text.014")}
               </p>
             </div>
-            
+
             <div className="flex items-center gap-3">
               <div className="px-4 py-2 border border-[#f4efe3]/20 bg-[#131410] text-xs text-[#9a9285]">
-                🚜 Heavy Equipment <span className="text-[#d9a441] ml-1">(Q3)</span>
+                {t("acts.text.015")}
+                <span className="text-[#d9a441] ml-1">
+                  {t("acts.text.016")}
+                </span>
               </div>
               <div className="px-4 py-2 border border-[#f4efe3]/20 bg-[#131410] text-xs text-[#9a9285]">
-                🧱 Bulk Cement & Rebar <span className="text-[#d9a441] ml-1">(Q4)</span>
+                {t("acts.text.017")}
+                <span className="text-[#d9a441] ml-1">
+                  {t("acts.text.018")}
+                </span>
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );
